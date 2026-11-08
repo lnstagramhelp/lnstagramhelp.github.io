@@ -1,0 +1,301 @@
+<!doctype html>
+<!--
+  =====================================================================
+  SUSTEXPO — Galeri sayfası (ürün ve proje görselleri)
+  ---------------------------------------------------------------------
+  YENİ GÖRSEL EKLEMEK
+  1) Fotoğrafınızı assets/images/gallery/ klasörüne koyun (örn. fuar-09.jpg).
+  2) Aşağıdaki <figure class="g-item"> bloklarından birini kopyalayın.
+  3) src="" kısmına dosya adını, data-category="" kısmına kategoriyi yazın.
+  4) Üç dildeki başlığı değiştirin. Bu kadar!
+     Filtre sayıları, numaralar ve tam ekran görüntüleyici otomatik güncellenir.
+
+  KATEGORİLER (data-category değerleri):
+     fuar · mutfak · giyinme · kapi · vestiyer · ayakkabilik
+  Yeni kategori için filtre çubuğuna bir <button data-filter="yeni-ad"> ekleyin.
+  =====================================================================
+-->
+<html lang="tr" data-lang="tr" data-theme="dark" data-langs="tr,en,de" data-default-lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title data-tr="Galeri — SUSTEXPO" data-en="Gallery — SUSTEXPO" data-de="Galerie — SUSTEXPO">Galeri — SUSTEXPO</title>
+  <meta name="description" content="SUSTEXPO fuar standı, mutfak, giyinme odası, kapı, vestiyer ve ayakkabılık projelerinden görseller."
+        data-tr="SUSTEXPO fuar standı, mutfak, giyinme odası, kapı, vestiyer ve ayakkabılık projelerinden görseller."
+        data-en="SUSTEXPO project gallery: exhibition stands, kitchens, walk-in closets, doors, hall units and shoe cabinets."
+        data-de="SUSTEXPO Projektgalerie: Messestände, Küchen, Ankleidezimmer, Türen, Garderoben und Schuhschränke.">
+  <meta name="theme-color" content="#0E0E0F">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Galeri — SUSTEXPO">
+  <meta property="og:image" content="assets/images/site/og-image.jpg">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/images/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/head.js"></script>
+</head>
+<body class="page-gallery">
+  <a class="skip-link" href="#galeri"><span lang="tr">İçeriğe geç</span><span lang="en">Skip to content</span><span lang="de">Zum Inhalt</span></a>
+  <div class="scroll-line" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__ring"><span class="cursor__label"><span lang="tr">Görüntüle</span><span lang="en">View</span><span lang="de">Ansehen</span></span></div>
+    <div class="cursor__dot"></div>
+  </div>
+
+  <!-- ================================================================ ÜST MENÜ -->
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="SUSTEXPO">
+        <img class="logo-on-dark" src="assets/images/logo-light.svg" alt="SUSTEXPO" width="190" height="40">
+        <img class="logo-on-light" src="assets/images/logo-dark.svg" alt="SUSTEXPO" width="190" height="40">
+      </a>
+      <nav class="nav" aria-label="Ana menü">
+        <a href="index.html#hizmetler"><span lang="tr">Hizmetler</span><span lang="en">Services</span><span lang="de">Leistungen</span></a>
+        <a href="index.html#hakkimizda"><span lang="tr">Hakkımızda</span><span lang="en">About</span><span lang="de">Über uns</span></a>
+        <a href="galeri.html" class="is-active" aria-current="page"><span lang="tr">Galeri</span><span lang="en">Gallery</span><span lang="de">Galerie</span></a>
+        <a href="index.html#is-ortaklari"><span lang="tr">İş Ortakları</span><span lang="en">Partners</span><span lang="de">Partner</span></a>
+        <a href="index.html#iletisim"><span lang="tr">İletişim</span><span lang="en">Contact</span><span lang="de">Kontakt</span></a>
+      </nav>
+      <div class="header__tools">
+        <div class="lang" role="group" aria-label="Dil / Language / Sprache">
+          <span class="lang__pill" aria-hidden="true"></span>
+          <button type="button" data-set-lang="tr" aria-pressed="true" title="Türkçe">TR</button>
+          <button type="button" data-set-lang="en" aria-pressed="false" title="English">EN</button>
+          <button type="button" data-set-lang="de" aria-pressed="false" title="Deutsch">DE</button>
+        </div>
+        <button type="button" class="icon-btn theme-toggle" data-tr="Temayı değiştir" data-en="Switch theme" data-de="Design wechseln" aria-label="Temayı değiştir">
+          <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.2A8.5 8.5 0 1 1 9.8 3.5a6.8 6.8 0 0 0 10.7 10.7z"/></svg>
+          <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+        </button>
+        <a class="btn btn--accent btn--sm header__cta" href="index.html#iletisim"><span lang="tr">Teklif Al</span><span lang="en">Get a Quote</span><span lang="de">Angebot</span></a>
+        <button type="button" class="icon-btn menu-btn" aria-expanded="false" data-tr="Menü" data-en="Menu" data-de="Menü" aria-label="Menü"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mnav">
+    <ul class="mnav__links">
+      <li><a href="index.html#hizmetler"><small>01</small><span lang="tr">Hizmetler</span><span lang="en">Services</span><span lang="de">Leistungen</span></a></li>
+      <li><a href="index.html#hakkimizda"><small>02</small><span lang="tr">Hakkımızda</span><span lang="en">About</span><span lang="de">Über uns</span></a></li>
+      <li><a href="galeri.html"><small>03</small><span lang="tr">Galeri</span><span lang="en">Gallery</span><span lang="de">Galerie</span></a></li>
+      <li><a href="index.html#is-ortaklari"><small>04</small><span lang="tr">İş Ortakları</span><span lang="en">Partners</span><span lang="de">Partner</span></a></li>
+      <li><a href="index.html#iletisim"><small>05</small><span lang="tr">İletişim</span><span lang="en">Contact</span><span lang="de">Kontakt</span></a></li>
+    </ul>
+    <div class="mnav__foot">
+      <div class="lang" role="group" aria-label="Dil / Language / Sprache">
+        <span class="lang__pill" aria-hidden="true"></span>
+        <button type="button" data-set-lang="tr" aria-pressed="true">TR</button>
+        <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+        <button type="button" data-set-lang="de" aria-pressed="false">DE</button>
+      </div>
+      <button type="button" class="icon-btn theme-toggle" data-tr="Temayı değiştir" data-en="Switch theme" data-de="Design wechseln" aria-label="Temayı değiştir">
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.2A8.5 8.5 0 1 1 9.8 3.5a6.8 6.8 0 0 0 10.7 10.7z"/></svg>
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      </button>
+      <a class="btn btn--accent btn--sm" href="index.html#iletisim"><span lang="tr">Teklif Al</span><span lang="en">Get a Quote</span><span lang="de">Angebot</span></a>
+    </div>
+  </div>
+
+  <main id="galeri">
+    <!-- ================================================================ SAYFA BAŞLIĞI -->
+    <section class="page-hero">
+      <div class="container">
+        <nav class="crumbs" aria-label="breadcrumb" data-reveal="fade">
+          <a href="index.html"><span lang="tr">Ana sayfa</span><span lang="en">Home</span><span lang="de">Startseite</span></a>
+          <span aria-hidden="true">/</span>
+          <span><span lang="tr">Galeri</span><span lang="en">Gallery</span><span lang="de">Galerie</span></span>
+        </nav>
+        <div class="page-hero__grid">
+          <div>
+            <p class="eyebrow" data-reveal="fade" style="margin-bottom:24px"><span lang="tr">Ürün &amp; proje görselleri</span><span lang="en">Products &amp; projects</span><span lang="de">Produkte &amp; Projekte</span></p>
+            <h1 class="display" data-split><span lang="tr">İşlerimizden <em>kareler.</em></span><span lang="en">Our work in <em>frames.</em></span><span lang="de">Unsere Arbeit in <em>Bildern.</em></span></h1>
+          </div>
+          <div>
+            <p class="lead" data-reveal style="--d:200"><span lang="tr">Fuar standlarından mutfaklara, giyinme odalarından kapılara; kurduğumuz ve monte ettiğimiz işlerden seçkiler. Bir görsele tıklayın, tam ekranda inceleyin.</span><span lang="en">From exhibition stands to kitchens, closets and doors — a selection of what we've built and installed. Click any image to view it full screen.</span><span lang="de">Von Messeständen über Küchen bis zu Ankleiden und Türen – eine Auswahl unserer Arbeiten. Klicken Sie auf ein Bild für die Vollbildansicht.</span></p>
+            <div class="page-hero__meta" data-reveal style="--d:300">
+              <div><strong data-g-total>18</strong><span lang="tr">Proje</span><span lang="en">Projects</span><span lang="de">Projekte</span></div>
+              <div><strong data-g-cats>6</strong><span lang="tr">Kategori</span><span lang="en">Categories</span><span lang="de">Kategorien</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ FİLTRELER
+         Her butonun data-filter değeri, görsellerdeki data-category ile aynı olmalı. -->
+    <div class="filters-wrap">
+      <div class="container">
+        <div class="filters" data-filters role="toolbar" aria-label="Kategoriler">
+          <span class="filters__pill" aria-hidden="true"></span>
+          <button type="button" data-filter="all" aria-pressed="true"><span class="f-label"><span lang="tr">Tümü</span><span lang="en">All</span><span lang="de">Alle</span></span></button>
+          <button type="button" data-filter="fuar" aria-pressed="false"><span class="f-label"><span lang="tr">Fuar Standı</span><span lang="en">Exhibition Stands</span><span lang="de">Messestände</span></span></button>
+          <button type="button" data-filter="mutfak" aria-pressed="false"><span class="f-label"><span lang="tr">Mutfak</span><span lang="en">Kitchens</span><span lang="de">Küchen</span></span></button>
+          <button type="button" data-filter="giyinme" aria-pressed="false"><span class="f-label"><span lang="tr">Giyinme Odası</span><span lang="en">Walk-in Closets</span><span lang="de">Ankleidezimmer</span></span></button>
+          <button type="button" data-filter="kapi" aria-pressed="false"><span class="f-label"><span lang="tr">Kapı</span><span lang="en">Doors</span><span lang="de">Türen</span></span></button>
+          <button type="button" data-filter="vestiyer" aria-pressed="false"><span class="f-label"><span lang="tr">Vestiyer</span><span lang="en">Hall Units</span><span lang="de">Garderoben</span></span></button>
+          <button type="button" data-filter="ayakkabilik" aria-pressed="false"><span class="f-label"><span lang="tr">Ayakkabılık</span><span lang="en">Shoe Cabinets</span><span lang="de">Schuhschränke</span></span></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================================ GALERİ IZGARASI -->
+    <section class="gallery-section">
+      <div class="container">
+        <div class="g-grid" data-gallery data-bento>
+
+          <!-- ===== GALERİ ÖĞESİ — kopyalayıp çoğaltabilirsiniz ===== -->
+          <figure class="g-item" data-category="fuar">
+            <img src="assets/images/gallery/fuar-01.jpg" alt="" loading="lazy">
+            <figcaption><span lang="tr">Köşe stand — LED ekran, lounge ve info desk</span><span lang="en">Corner stand — LED wall, lounge and info desk</span><span lang="de">Eckstand — LED-Wand, Lounge und Infotheke</span></figcaption>
+          </figure>
+          <!-- ===== / GALERİ ÖĞESİ ===== -->
+
+          <figure class="g-item" data-category="fuar">
+            <img src="assets/images/gallery/fuar-03.jpg" alt="" loading="lazy">
+            <figcaption><span lang="tr">Ada stand — asma halka banner</span><span lang="en">Island stand — suspended ring banner</span><span lang="de">Inselstand — abgehängtes Ringbanner</span></figcaption>
+          </figure>
+          <figure class="g-item" data-category="mutfak">
+            <img src="assets/images/gallery/mutfak-01.jpg" alt="" loading="lazy">
+            <figcaption><span lang="tr">Yeşil lake ve meşe mutfak, mermer ada</span><span lang="en">Green lacquer and oak kitchen with marble island</span><span lang="de">Küche in Grünlack und Eiche mit Marmorinsel</span></figcaption>
+          </figure>
+          <figure class="g-item" data-category="fuar">
+            <img src="assets/images/gallery/fuar-05.jpg" alt="" loading="lazy">
+            <figcaption><span lang="tr">Ahşap pavyon stand — çıtalı tavan</span><span lang="en">Timber pavilion stand — slatted roof</span><span lang="de">Holzpavillon-Stand — Lamellendach</span></figcaption>
+          </figure>
+          <figure class="g-item" data-category="giyinme">
+            <img src="assets/images/gallery/giyinme-01.jpg" alt="" loading="lazy">
+            <figcaption><span lang="tr">Ceviz giyinme odası, LED raflı</span><span lang="en">Walnut walk-in closet with LED shelves</span><span lang="de">Ankleidezimmer in Nussbaum mit LED-Böden</span></figcaption>
+          </figure>
+          <figure class="g-item" data-category="fuar">
+            <img src="assets/images/gallery/fuar-02.jpg" alt="" loading="lazy">
+            <figcaption><span lang="tr">Logolu info desk ve LED ekran</span><span lang="en">Branded info desk and LED wall</span><span lang="de">Infotheke mit Logo und LED-Wand</span></figcaption>
+          </figure>
+          <figure class="g-item" data-category="kapi">
+            <img src="assets/images/gallery/kapi-01.jpg" alt="" loading="lazy">
+            <figcaption><span lang="tr">Meşe iç kapılar — koridor</span><span lang="en">Oak interior doors — hallway</span><span lang="de">Innentüren in Eiche — Flur</span></figcaption>
+          </figure>
+          <figure class="g-item" data-category="fuar">
+            <img src="assets/images/gallery/fuar-04.jpg" alt="" loading="lazy">
+            <figcaption><span lang="tr">Bar bankosu ve ışıklı grafik duvar</span><span lang="en">Bar counter and backlit graphic wall</span><span lang="de">Bartheke und hinterleuchtete Grafikwand</span></figcaption>
+          </figure>
+          <figure class="g-item" data-category="vestiyer">
+            <img src="assets/images/gallery/vestiyer-01.jpg" alt="" loading="lazy">
+            <figcaption><span lang="tr">Meşe nişli vestiyer ve oturma bankı</span><span lang="en">Oak hall unit with bench</span><span lang="de">Garderobe in Eiche mit Sitzbank</span></figcaption>
+          </figure>
+          <figure class="g-item" data-category="ayakkabilik">
+            <img src="assets/images/gallery/ayakkabilik-01.jpg" alt="" loading="lazy">
+            <figcaption><span lang="tr">Çıtalı kapaklı ayakkabılık ve yuvarlak ayna</span><span lang="en">Fluted shoe cabinet with round mirror</span><span lang="de">Schuhschrank mit Rillenfront und rundem Spiegel</span></figcaption>
+          </figure>
+          <figure class="g-item" data-category="fuar">
+            <img src="assets/images/gallery/fuar-06.jpg" alt="" loading="lazy">
+            <figcaption><span lang="tr">Ortak masa, bitki duvarı ve sergi kaideleri</span><span lang="en">Communal table, green wall and display plinths</span><span lang="de">Gemeinschaftstisch, Pflanzenwand und Podeste</span></figcaption>
+          </figure>
+          <figure class="g-item" data-category="mutfak">
+            <img src="assets/images/gallery/mutfak-02.jpg" alt="" loading="lazy">
+            <figcaption><span lang="tr">Mermer ada ve sarkıt aydınlatma</span><span lang="en">Marble island with pendant lights</span><span lang="de">Marmorinsel mit Pendelleuchten</span></figcaption>
+          </figure>
+          <figure class="g-item" data-category="fuar">
+            <img src="assets/images/gallery/fuar-07.jpg" alt="" loading="lazy">
+            <figcaption><span lang="tr">Lounge alanı — ahşap çıtalı duvar ve TV</span><span lang="en">Lounge area — timber slat wall and TV</span><span lang="de">Lounge — Holzlamellenwand und TV</span></figcaption>
+          </figure>
+          <figure class="g-item" data-category="giyinme">
+            <img src="assets/images/gallery/giyinme-02.jpg" alt="" loading="lazy">
+            <figcaption><span lang="tr">Ayakkabı ve katlanmış giysi bölmeleri</span><span lang="en">Shoe and folded-clothes compartments</span><span lang="de">Fächer für Schuhe und Kleidung</span></figcaption>
+          </figure>
+          <figure class="g-item" data-category="kapi">
+            <img src="assets/images/gallery/kapi-02.jpg" alt="" loading="lazy">
+            <figcaption><span lang="tr">Antrasit pivot kapı, pirinç kulp</span><span lang="en">Anthracite pivot door with brass handle</span><span lang="de">Anthrazit-Pivottür mit Messinggriff</span></figcaption>
+          </figure>
+          <figure class="g-item" data-category="fuar">
+            <img src="assets/images/gallery/fuar-08.jpg" alt="" loading="lazy">
+            <figcaption><span lang="tr">Ada stand — kuşbakışı yerleşim</span><span lang="en">Island stand — aerial layout</span><span lang="de">Inselstand — Ansicht von oben</span></figcaption>
+          </figure>
+          <figure class="g-item" data-category="vestiyer">
+            <img src="assets/images/gallery/vestiyer-02.jpg" alt="" loading="lazy">
+            <figcaption><span lang="tr">Askılık, ayakkabı bölmesi ve dolap</span><span lang="en">Coat hooks, shoe cubbies and cabinet</span><span lang="de">Haken, Schuhfächer und Schrank</span></figcaption>
+          </figure>
+          <figure class="g-item" data-category="ayakkabilik">
+            <img src="assets/images/gallery/ayakkabilik-02.jpg" alt="" loading="lazy">
+            <figcaption><span lang="tr">Klapa kapak detayı</span><span lang="en">Tilt-out door detail</span><span lang="de">Detail der Klappe</span></figcaption>
+          </figure>
+
+        </div>
+        <p class="g-empty"><span lang="tr">Bu kategoride henüz görsel yok.</span><span lang="en">No images in this category yet.</span><span lang="de">In dieser Kategorie gibt es noch keine Bilder.</span></p>
+      </div>
+    </section>
+
+    <!-- ================================================================ ÇAĞRI BANDI -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="cta-band" data-reveal="zoom">
+          <div class="cta-band__bg"><img src="assets/images/site/cta.jpg" alt="" loading="lazy" data-parallax="0.1"></div>
+          <p class="eyebrow"><span lang="tr">Sıradaki proje</span><span lang="en">Next project</span><span lang="de">Nächstes Projekt</span></p>
+          <h2 class="h2"><span lang="tr">Benzer bir proje mi <em>düşünüyorsunuz?</em></span><span lang="en">Planning something <em>similar?</em></span><span lang="de">Planen Sie etwas <em>Ähnliches?</em></span></h2>
+          <div class="cta-band__actions">
+            <a class="btn btn--accent" href="index.html#iletisim"><span lang="tr">Teklif alın</span><span lang="en">Get a quote</span><span lang="de">Angebot anfordern</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn--ghost" href="#" data-wa-copy target="_blank" rel="noopener"><span lang="tr">WhatsApp'tan yazın</span><span lang="en">Message on WhatsApp</span><span lang="de">Per WhatsApp schreiben</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================================================================ FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__about">
+          <a class="brand" href="index.html" aria-label="SUSTEXPO">
+            <img class="logo-on-dark" src="assets/images/logo-light.svg" alt="SUSTEXPO" width="190" height="40">
+            <img class="logo-on-light" src="assets/images/logo-dark.svg" alt="SUSTEXPO" width="190" height="40">
+          </a>
+          <p><span lang="tr">Fuar stand kurulumu ve profesyonel mobilya montajı. Boş bir alandan anahtar teslim sonuca.</span><span lang="en">Exhibition stand building and professional furniture installation — from an empty plot to a turnkey result.</span><span lang="de">Messestandbau und professionelle Möbelmontage – von der leeren Fläche bis zur schlüsselfertigen Übergabe.</span></p>
+        </div>
+        <div>
+          <h4><span lang="tr">Sayfalar</span><span lang="en">Pages</span><span lang="de">Seiten</span></h4>
+          <ul>
+            <li><a href="index.html#hizmetler"><span lang="tr">Hizmetler</span><span lang="en">Services</span><span lang="de">Leistungen</span></a></li>
+            <li><a href="index.html#hakkimizda"><span lang="tr">Hakkımızda</span><span lang="en">About</span><span lang="de">Über uns</span></a></li>
+            <li><a href="galeri.html"><span lang="tr">Galeri</span><span lang="en">Gallery</span><span lang="de">Galerie</span></a></li>
+            <li><a href="index.html#is-ortaklari"><span lang="tr">İş Ortakları</span><span lang="en">Partners</span><span lang="de">Partner</span></a></li>
+            <li><a href="index.html#iletisim"><span lang="tr">İletişim</span><span lang="en">Contact</span><span lang="de">Kontakt</span></a></li>
+          </ul>
+        </div>
+        <div>
+          <h4><span lang="tr">Hizmetler</span><span lang="en">Services</span><span lang="de">Leistungen</span></h4>
+          <ul>
+            <li><a href="#fuar" data-jump-filter="fuar"><span lang="tr">Fuar Standı</span><span lang="en">Exhibition Stands</span><span lang="de">Messestände</span></a></li>
+            <li><a href="#mutfak" data-jump-filter="mutfak"><span lang="tr">Mutfak</span><span lang="en">Kitchens</span><span lang="de">Küchen</span></a></li>
+            <li><a href="#giyinme" data-jump-filter="giyinme"><span lang="tr">Giyinme Odası</span><span lang="en">Walk-in Closets</span><span lang="de">Ankleidezimmer</span></a></li>
+            <li><a href="#kapi" data-jump-filter="kapi"><span lang="tr">Kapı</span><span lang="en">Doors</span><span lang="de">Türen</span></a></li>
+            <li><a href="#vestiyer" data-jump-filter="vestiyer"><span lang="tr">Vestiyer</span><span lang="en">Hall Units</span><span lang="de">Garderoben</span></a></li>
+            <li><a href="#ayakkabilik" data-jump-filter="ayakkabilik"><span lang="tr">Ayakkabılık</span><span lang="en">Shoe Cabinets</span><span lang="de">Schuhschränke</span></a></li>
+          </ul>
+        </div>
+        <div>
+          <h4><span lang="tr">İletişim</span><span lang="en">Contact</span><span lang="de">Kontakt</span></h4>
+          <ul>
+            <!-- [DÜZENLE] Footer telefon ve e-posta -->
+            <li><a href="tel:+905550000000">+90 555 000 00 00</a></li>
+            <li><a href="mailto:info@sustexpo.com">info@sustexpo.com</a></li>
+            <li><span class="muted">İstanbul, Türkiye</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__word" aria-hidden="true">SUST<span>EXPO</span></div>
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> SUSTEXPO. <span lang="tr">Tüm hakları saklıdır.</span><span lang="en">All rights reserved.</span><span lang="de">Alle Rechte vorbehalten.</span></span>
+        <a class="to-top" href="#galeri" data-tr="Yukarı çık" data-en="Back to top" data-de="Nach oben" aria-label="Yukarı çık"><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></span></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- [DÜZENLE] WHATSAPP numarası (ana sayfadaki ile aynı olmalı) -->
+  <a class="wa-float" href="https://wa.me/905550000000" data-wa-link target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35zM12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88zm8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.49-8.41z"/></svg>
+  </a>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/gallery.js"></script>
+</body>
+</html>

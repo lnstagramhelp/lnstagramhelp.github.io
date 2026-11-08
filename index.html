@@ -1,0 +1,650 @@
+<!doctype html>
+<!--
+  =====================================================================
+  SUSTEXPO — Ana sayfa
+  ---------------------------------------------------------------------
+  DÜZENLEME İPUÇLARI (ayrıntılar: NASIL-DUZENLENIR.txt)
+  • Değiştirmeniz gereken yerler "[DÜZENLE]" notuyla işaretlidir (Ctrl+F).
+  • Her metin üç dilde yan yana yazılıdır:
+        <span lang="tr">Türkçe</span>
+        <span lang="en">English</span>
+        <span lang="de">Deutsch</span>
+    Bir metni değiştirirken üç dilini de güncelleyin.
+  • Etiket içine yazılamayan metinler (sekme başlığı, kutu içi silik
+    yazılar) data-tr / data-en / data-de ile yazılır.
+  • data-default-lang="en": ziyaretçinin tarayıcı dili TR/EN/DE değilse
+    açılacak dil. Türkçe açılsın isterseniz "tr" yapın.
+  =====================================================================
+-->
+<html lang="tr" data-lang="tr" data-theme="dark" data-langs="tr,en,de" data-default-lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title data-tr="SUSTEXPO — Fuar Stand Kurulumu ve Mobilya Montajı" data-en="SUSTEXPO — Exhibition Stands & Furniture Installation" data-de="SUSTEXPO — Messestandbau & Möbelmontage">SUSTEXPO — Fuar Stand Kurulumu ve Mobilya Montajı</title>
+  <meta name="description" content="SUSTEXPO; fuar alanlarında anahtar teslim stand kurulumu ve mutfak, giyinme odası, kapı, vestiyer, ayakkabılık montajı yapar."
+        data-tr="SUSTEXPO; fuar alanlarında anahtar teslim stand kurulumu ve mutfak, giyinme odası, kapı, vestiyer, ayakkabılık montajı yapar."
+        data-en="SUSTEXPO builds turnkey exhibition stands and installs kitchens, walk-in closets, doors, hall units and shoe cabinets."
+        data-de="SUSTEXPO baut schlüsselfertige Messestände und montiert Küchen, Ankleidezimmer, Türen, Garderoben und Schuhschränke.">
+  <meta name="theme-color" content="#0E0E0F">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SUSTEXPO — Fuar Stand Kurulumu ve Mobilya Montajı">
+  <meta property="og:description" content="Boş bir alandan göz alıcı bir standa. Fuar stand kurulumu ve mobilya montajı.">
+  <!-- [DÜZENLE] Siteyi yayına aldığınızda başına alan adınızı yazın: https://www.siteniz.com/assets/images/site/og-image.jpg -->
+  <meta property="og:image" content="assets/images/site/og-image.jpg">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/images/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/head.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#hizmetler"><span lang="tr">İçeriğe geç</span><span lang="en">Skip to content</span><span lang="de">Zum Inhalt</span></a>
+
+  <!-- Açılış animasyonu -->
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader__mark">
+      <svg viewBox="0 0 40 40"><rect x="10" y="9" width="20" height="4.6" fill="currentColor"/><rect x="10" y="9" width="4.6" height="7.5" fill="currentColor"/><rect x="10" y="17.7" width="20" height="4.6" fill="var(--accent)"/><rect x="25.4" y="23.5" width="4.6" height="7.5" fill="currentColor"/><rect x="10" y="26.4" width="20" height="4.6" fill="currentColor"/></svg>
+      <div class="preloader__word"><span>SUST<b>EXPO</b></span></div>
+    </div>
+  </div>
+  <div class="scroll-line" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__ring"><span class="cursor__label"><span lang="tr">Görüntüle</span><span lang="en">View</span><span lang="de">Ansehen</span></span></div>
+    <div class="cursor__dot"></div>
+  </div>
+
+  <!-- ================================================================ ÜST MENÜ -->
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="SUSTEXPO">
+        <!-- [DÜZENLE] Kendi logonuz için bu iki dosyayı değiştirin (koyu zemin / açık zemin) -->
+        <img class="logo-on-dark" src="assets/images/logo-light.svg" alt="SUSTEXPO" width="190" height="40">
+        <img class="logo-on-light" src="assets/images/logo-dark.svg" alt="SUSTEXPO" width="190" height="40">
+      </a>
+      <nav class="nav" aria-label="Ana menü">
+        <a href="#hizmetler"><span lang="tr">Hizmetler</span><span lang="en">Services</span><span lang="de">Leistungen</span></a>
+        <a href="#hakkimizda"><span lang="tr">Hakkımızda</span><span lang="en">About</span><span lang="de">Über uns</span></a>
+        <a href="galeri.html"><span lang="tr">Galeri</span><span lang="en">Gallery</span><span lang="de">Galerie</span></a>
+        <a href="#is-ortaklari"><span lang="tr">İş Ortakları</span><span lang="en">Partners</span><span lang="de">Partner</span></a>
+        <a href="#iletisim"><span lang="tr">İletişim</span><span lang="en">Contact</span><span lang="de">Kontakt</span></a>
+      </nav>
+      <div class="header__tools">
+        <div class="lang" role="group" aria-label="Dil / Language / Sprache">
+          <span class="lang__pill" aria-hidden="true"></span>
+          <button type="button" data-set-lang="tr" aria-pressed="true" title="Türkçe">TR</button>
+          <button type="button" data-set-lang="en" aria-pressed="false" title="English">EN</button>
+          <button type="button" data-set-lang="de" aria-pressed="false" title="Deutsch">DE</button>
+        </div>
+        <button type="button" class="icon-btn theme-toggle" data-tr="Temayı değiştir" data-en="Switch theme" data-de="Design wechseln" aria-label="Temayı değiştir">
+          <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.2A8.5 8.5 0 1 1 9.8 3.5a6.8 6.8 0 0 0 10.7 10.7z"/></svg>
+          <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+        </button>
+        <a class="btn btn--accent btn--sm header__cta" href="#iletisim"><span lang="tr">Teklif Al</span><span lang="en">Get a Quote</span><span lang="de">Angebot</span></a>
+        <button type="button" class="icon-btn menu-btn" aria-expanded="false" data-tr="Menü" data-en="Menu" data-de="Menü" aria-label="Menü"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobil menü -->
+  <div class="mnav">
+    <ul class="mnav__links">
+      <li><a href="#hizmetler"><small>01</small><span lang="tr">Hizmetler</span><span lang="en">Services</span><span lang="de">Leistungen</span></a></li>
+      <li><a href="#hakkimizda"><small>02</small><span lang="tr">Hakkımızda</span><span lang="en">About</span><span lang="de">Über uns</span></a></li>
+      <li><a href="galeri.html"><small>03</small><span lang="tr">Galeri</span><span lang="en">Gallery</span><span lang="de">Galerie</span></a></li>
+      <li><a href="#is-ortaklari"><small>04</small><span lang="tr">İş Ortakları</span><span lang="en">Partners</span><span lang="de">Partner</span></a></li>
+      <li><a href="#iletisim"><small>05</small><span lang="tr">İletişim</span><span lang="en">Contact</span><span lang="de">Kontakt</span></a></li>
+    </ul>
+    <div class="mnav__foot">
+      <div class="lang" role="group" aria-label="Dil / Language / Sprache">
+        <span class="lang__pill" aria-hidden="true"></span>
+        <button type="button" data-set-lang="tr" aria-pressed="true">TR</button>
+        <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+        <button type="button" data-set-lang="de" aria-pressed="false">DE</button>
+      </div>
+      <button type="button" class="icon-btn theme-toggle" data-tr="Temayı değiştir" data-en="Switch theme" data-de="Design wechseln" aria-label="Temayı değiştir">
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.2A8.5 8.5 0 1 1 9.8 3.5a6.8 6.8 0 0 0 10.7 10.7z"/></svg>
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      </button>
+      <a class="btn btn--accent btn--sm" href="#iletisim"><span lang="tr">Teklif Al</span><span lang="en">Get a Quote</span><span lang="de">Angebot</span></a>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ================================================================
+         1) KAYDIRDIKÇA KURULAN FUAR STANDI
+         Animasyon assets/js/stand-builder.js dosyasındadır.
+         Aşağıdaki metinleri (başlık ve 8 adım) buradan değiştirebilirsiniz.
+         ================================================================ -->
+    <section class="build" id="top" data-build>
+      <div class="build__sticky">
+        <canvas class="build__canvas" aria-hidden="true"></canvas>
+
+        <div class="build__hero">
+          <div class="container">
+            <div class="build__hero-inner">
+              <p class="eyebrow" data-reveal="fade" style="--d:650"><span lang="tr">Fuar Stand Kurulumu · Mobilya Montajı</span><span lang="en">Exhibition Stands · Furniture Installation</span><span lang="de">Messestandbau · Möbelmontage</span></p>
+              <h1 class="display" data-split style="--d:700">
+                <span lang="tr">Boş bir alandan <em>göz alıcı</em> bir standa.</span>
+                <span lang="en">From an empty plot to a <em>show-stopping</em> stand.</span>
+                <span lang="de">Von der leeren Fläche zum <em>Messestand,</em> der begeistert.</span>
+              </h1>
+              <p class="lead" data-reveal style="--d:1000">
+                <span lang="tr">SUSTEXPO; fuar alanlarında anahtar teslim stand kurar, evlerde ve ofislerde mobilya montajı yapar. Aşağı kaydırın, standı birlikte kuralım.</span>
+                <span lang="en">SUSTEXPO builds turnkey exhibition stands and installs furniture in homes and offices. Scroll down and let's build a stand together.</span>
+                <span lang="de">SUSTEXPO baut schlüsselfertige Messestände und montiert Möbel in Wohnungen und Büros. Scrollen Sie – wir bauen gemeinsam einen Stand.</span>
+              </p>
+              <div class="build__cta" data-reveal style="--d:1150">
+                <a class="btn btn--accent" href="#iletisim"><span lang="tr">Teklif Alın</span><span lang="en">Get a Quote</span><span lang="de">Angebot anfordern</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                <a class="btn btn--ghost" href="galeri.html"><span lang="tr">Projelerimiz</span><span lang="en">Our Projects</span><span lang="de">Unsere Projekte</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="build__panel">
+          <div class="container">
+            <div class="build__steps">
+              <div class="build__steps-head">
+                <span class="eyebrow"><span lang="tr">Bir stand nasıl kurulur?</span><span lang="en">How a stand is built</span><span lang="de">So entsteht ein Stand</span></span>
+                <span class="build__count"><b data-step-count>01</b> / 08</span>
+              </div>
+              <ol>
+                <li class="step" data-step><span class="step__num">01</span>
+                  <h3 class="step__title"><span lang="tr">Alan</span><span lang="en">The plot</span><span lang="de">Die Fläche</span></h3>
+                  <p class="step__desc"><span lang="tr">Fuar alanında size ayrılan boş metrekare ölçülür ve işaretlenir.</span><span lang="en">The empty floor space allocated at the fair is measured and marked out.</span><span lang="de">Die zugeteilte Messefläche wird vermessen und markiert.</span></p></li>
+                <li class="step" data-step><span class="step__num">02</span>
+                  <h3 class="step__title"><span lang="tr">Zemin &amp; parke</span><span lang="en">Floor &amp; parquet</span><span lang="de">Boden &amp; Parkett</span></h3>
+                  <p class="step__desc"><span lang="tr">Yükseltilmiş platform kurulur, parkeler tek tek döşenir; kablolar zeminin altına gizlenir.</span><span lang="en">A raised platform goes in and the parquet is laid plank by plank, with cables hidden below.</span><span lang="de">Das Podest wird gebaut und das Parkett Diele für Diele verlegt – Kabel verschwinden darunter.</span></p></li>
+                <li class="step" data-step><span class="step__num">03</span>
+                  <h3 class="step__title"><span lang="tr">Duvarlar</span><span lang="en">Walls</span><span lang="de">Wände</span></h3>
+                  <p class="step__desc"><span lang="tr">Panel duvarlar, ahşap çıtalar ve logolu marka kulesi yükselir.</span><span lang="en">Panel walls, timber slats and the branded tower go up.</span><span lang="de">Wandpaneele, Holzlamellen und der Markenturm werden aufgestellt.</span></p></li>
+                <li class="step" data-step><span class="step__num">04</span>
+                  <h3 class="step__title"><span lang="tr">Ekranlar</span><span lang="en">Screens</span><span lang="de">Bildschirme</span></h3>
+                  <p class="step__desc"><span lang="tr">LED ekran ve TV'ler monte edilir, kablolaması yapılır ve devreye alınır.</span><span lang="en">The LED wall and TVs are mounted, wired and switched on.</span><span lang="de">LED-Wand und Bildschirme werden montiert, verkabelt und eingeschaltet.</span></p></li>
+                <li class="step" data-step><span class="step__num">05</span>
+                  <h3 class="step__title"><span lang="tr">Oturma alanı</span><span lang="en">Lounge</span><span lang="de">Lounge</span></h3>
+                  <p class="step__desc"><span lang="tr">Halı, kanepe, berjerler ve sehpayla misafir alanı hazırlanır.</span><span lang="en">Rug, sofa, armchairs and coffee table create the guest area.</span><span lang="de">Teppich, Sofa, Sessel und Couchtisch bilden den Gästebereich.</span></p></li>
+                <li class="step" data-step><span class="step__num">06</span>
+                  <h3 class="step__title"><span lang="tr">Info desk</span><span lang="en">Info desk</span><span lang="de">Infotheke</span></h3>
+                  <p class="step__desc"><span lang="tr">Logolu karşılama bankosu, bar masası ve tabureler yerleşir.</span><span lang="en">The branded reception counter, bar table and stools are placed.</span><span lang="de">Empfangstheke mit Logo, Stehtisch und Hocker werden platziert.</span></p></li>
+                <li class="step" data-step><span class="step__num">07</span>
+                  <h3 class="step__title"><span lang="tr">Aydınlatma</span><span lang="en">Lighting</span><span lang="de">Beleuchtung</span></h3>
+                  <p class="step__desc"><span lang="tr">Truss sistemi asılır; spotlar ve LED şeritler yanar.</span><span lang="en">The truss is rigged; spotlights and LED strips switch on.</span><span lang="de">Die Traverse wird abgehängt; Spots und LED-Leisten gehen an.</span></p></li>
+                <li class="step" data-step><span class="step__num">08</span>
+                  <h3 class="step__title"><span lang="tr">Teslim</span><span lang="en">Handover</span><span lang="de">Übergabe</span></h3>
+                  <p class="step__desc"><span lang="tr">Son kontroller yapılır, stand fuar açılışına hazır.</span><span lang="en">Final checks are done — the stand is ready for opening day.</span><span lang="de">Letzte Kontrollen – der Stand ist bereit für die Eröffnung.</span></p></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="build__final">
+          <div class="container">
+            <div class="build__final-inner">
+              <span class="eyebrow"><span lang="tr">Anahtar teslim</span><span lang="en">Turnkey</span><span lang="de">Schlüsselfertig</span></span>
+              <h2 class="h2"><span lang="tr">Stand hazır. <em>Sıra sizin fuarınızda.</em></span><span lang="en">Stand ready. <em>Your show is next.</em></span><span lang="de">Stand fertig. <em>Jetzt kommt Ihre Messe.</em></span></h2>
+              <p><span lang="tr">Çizimden söküme kadar tüm süreci tek ekip olarak yönetiyoruz. Bir sonraki fuarınızın tarihini ve metrekaresini yazın, size dönelim.</span><span lang="en">From drawings to dismantling, one team handles it all. Send us the date and floor space of your next show and we'll get back to you.</span><span lang="de">Von der Zeichnung bis zum Abbau – alles aus einer Hand. Nennen Sie uns Termin und Fläche Ihrer nächsten Messe, wir melden uns.</span></p>
+              <a class="btn btn--accent" href="#iletisim"><span lang="tr">Fuar teklifi alın</span><span lang="en">Get an exhibition quote</span><span lang="de">Messeangebot anfordern</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="build__bar">
+          <span class="build__hint"><span class="mouse" aria-hidden="true"></span><span lang="tr">Standı kurmak için kaydırın</span><span lang="en">Scroll to build the stand</span><span lang="de">Scrollen, um den Stand zu bauen</span></span>
+          <div class="build__progress" aria-hidden="true"><span></span></div>
+          <a class="build__skip" href="#hizmetler"><span><span lang="tr">Animasyonu geç</span><span lang="en">Skip animation</span><span lang="de">Animation überspringen</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ 2) KAYAN BANT -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <div class="marquee__group">
+          <span class="marquee__item"><span lang="tr">Fuar Standı</span><span lang="en">Exhibition Stands</span><span lang="de">Messestände</span></span>
+          <span class="marquee__item"><span lang="tr">Modüler Stand</span><span lang="en">Modular Stands</span><span lang="de">Systemstände</span></span>
+          <span class="marquee__item"><span lang="tr">Özel Tasarım</span><span lang="en">Custom Builds</span><span lang="de">Individualbau</span></span>
+          <span class="marquee__item"><span lang="tr">LED &amp; Aydınlatma</span><span lang="en">LED &amp; Lighting</span><span lang="de">LED &amp; Licht</span></span>
+          <span class="marquee__item"><span lang="tr">Mutfak</span><span lang="en">Kitchens</span><span lang="de">Küchen</span></span>
+          <span class="marquee__item"><span lang="tr">Giyinme Odası</span><span lang="en">Walk-in Closets</span><span lang="de">Ankleidezimmer</span></span>
+          <span class="marquee__item"><span lang="tr">Kapı</span><span lang="en">Doors</span><span lang="de">Türen</span></span>
+          <span class="marquee__item"><span lang="tr">Vestiyer</span><span lang="en">Hall Units</span><span lang="de">Garderoben</span></span>
+          <span class="marquee__item"><span lang="tr">Ayakkabılık</span><span lang="en">Shoe Cabinets</span><span lang="de">Schuhschränke</span></span>
+          <span class="marquee__item"><span lang="tr">Anahtar Teslim</span><span lang="en">Turnkey</span><span lang="de">Schlüsselfertig</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================================ 3) HİZMETLER -->
+    <section class="section" id="hizmetler">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow" data-reveal="fade"><span lang="tr">Hizmetlerimiz</span><span lang="en">What we do</span><span lang="de">Leistungen</span></p>
+            <h2 class="h2" data-split><span lang="tr">İki uzmanlık, <em>tek ekip.</em></span><span lang="en">Two crafts, <em>one team.</em></span><span lang="de">Zwei Gewerke, <em>ein Team.</em></span></h2>
+          </div>
+          <p class="lead" data-reveal style="--d:150"><span lang="tr">Ağırlıklı olarak fuar alanlarında stand kuruyoruz; aynı ustalığı evlerde ve ofislerde mobilya montajına taşıyoruz.</span><span lang="en">Our main focus is building stands at exhibition venues — and we bring the same craftsmanship to furniture installation in homes and offices.</span><span lang="de">Unser Schwerpunkt ist der Standbau auf Messen – dieselbe Handwerkskunst bringen wir in die Möbelmontage für Wohnungen und Büros.</span></p>
+        </div>
+
+        <!-- 3a) Fuar stand kurulumu -->
+        <div class="service">
+          <div class="service__media">
+            <div class="media-frame" data-reveal="clip">
+              <img src="assets/images/site/hizmet-fuar.jpg" alt="" loading="lazy" data-parallax="0.08">
+              <span class="media-tag"><i></i><span lang="tr">Anahtar teslim stand</span><span lang="en">Turnkey stand</span><span lang="de">Schlüsselfertiger Stand</span></span>
+            </div>
+          </div>
+          <div>
+            <span class="service__index" data-reveal="fade"><span lang="tr">01 — Ana uzmanlık</span><span lang="en">01 — Core expertise</span><span lang="de">01 — Kernkompetenz</span></span>
+            <h3 class="h2 service__title" data-split><span lang="tr">Fuar Stand <em>Kurulumu</em></span><span lang="en">Exhibition <em>Stands</em></span><span lang="de"><em>Messe</em>standbau</span></h3>
+            <p class="service__intro" data-reveal><span lang="tr">Özel tasarım ahşap standlardan modüler sistemlere kadar, standınızı fuar alanında eksiksiz kurar ve fuar bitiminde güvenle sökeriz. Planlamadan teslime tek muhatap: SUSTEXPO.</span><span lang="en">From custom timber builds to modular systems, we install your stand on site and dismantle it safely after the show. One point of contact from planning to handover.</span><span lang="de">Von individuellen Holzbauten bis zu Systemständen: Wir bauen Ihren Stand vor Ort auf und nach der Messe sicher wieder ab. Ein Ansprechpartner von der Planung bis zur Übergabe.</span></p>
+            <ul class="svc-list">
+              <li class="svc" data-reveal><span class="svc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M3 17.5 12 21l9-3.5-9-3.5z"/><path d="M3 17.5V7.5L12 4v10M12 4l9 3.5v10"/></svg></span>
+                <h3><span lang="tr">Stand kurulumu &amp; söküm</span><span lang="en">Stand installation &amp; dismantling</span><span lang="de">Standaufbau &amp; Abbau</span></h3>
+                <p><span lang="tr">Özel tasarım veya modüler standınızı eksiksiz kurar, fuar sonunda güvenle sökeriz.</span><span lang="en">We install your custom or modular stand completely and dismantle it safely afterwards.</span><span lang="de">Wir bauen Ihren individuellen oder modularen Stand komplett auf und danach sicher ab.</span></p></li>
+              <li class="svc" data-reveal><span class="svc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h10M13 3v6M9 9v6M3 15h12M15 9v12M9 15v6"/></svg></span>
+                <h3><span lang="tr">Platform, parke &amp; halı</span><span lang="en">Platforms, parquet &amp; carpet</span><span lang="de">Podest, Parkett &amp; Teppich</span></h3>
+                <p><span lang="tr">Yükseltilmiş platform, parke ve halı kaplama; kablolar zeminin altında gizli kalır.</span><span lang="en">Raised platforms, parquet and carpet — with all cables hidden underneath.</span><span lang="de">Podeste, Parkett und Teppich – alle Kabel verschwinden unsichtbar im Boden.</span></p></li>
+              <li class="svc" data-reveal><span class="svc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M9 4v16M15 4v16"/></svg></span>
+                <h3><span lang="tr">Duvar &amp; panel sistemleri</span><span lang="en">Walls &amp; panel systems</span><span lang="de">Wand- &amp; Paneelsysteme</span></h3>
+                <p><span lang="tr">Ahşap, panel ve ışıklı kumaş duvarlar; logolu kule ve kafa bandı uygulamaları.</span><span lang="en">Timber, panel and backlit fabric walls, brand towers and fascia signage.</span><span lang="de">Holz-, Paneel- und Leuchtstoffwände, Markentürme und Blenden.</span></p></li>
+              <li class="svc" data-reveal><span class="svc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg></span>
+                <h3><span lang="tr">Ekran &amp; LED montajı</span><span lang="en">Screen &amp; LED mounting</span><span lang="de">Bildschirm- &amp; LED-Montage</span></h3>
+                <p><span lang="tr">LED ekran, TV ve dokunmatik kiosk montajı; düzenli kablo yönetimiyle birlikte.</span><span lang="en">LED walls, TVs and touch kiosks, mounted with tidy cable management.</span><span lang="de">LED-Wände, TVs und Touch-Kioske – inklusive sauberem Kabelmanagement.</span></p></li>
+              <li class="svc" data-reveal><span class="svc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3"/><path d="M2 13a2 2 0 0 1 4 0v2h12v-2a2 2 0 0 1 4 0v5H2z"/><path d="M5 18v2M19 18v2"/></svg></span>
+                <h3><span lang="tr">Mobilya, info desk &amp; dekor</span><span lang="en">Furniture, info desk &amp; décor</span><span lang="de">Möbel, Infotheke &amp; Deko</span></h3>
+                <p><span lang="tr">Karşılama bankosu, oturma grupları, bar masaları ve bitkilerle stand hayat bulur.</span><span lang="en">Reception desks, lounge seating, bar tables and greenery bring the stand to life.</span><span lang="de">Infotheken, Lounge-Möbel, Stehtische und Pflanzen erwecken den Stand zum Leben.</span></p></li>
+              <li class="svc" data-reveal><span class="svc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/></svg></span>
+                <h3><span lang="tr">Aydınlatma &amp; truss</span><span lang="en">Lighting &amp; truss</span><span lang="de">Licht &amp; Traversen</span></h3>
+                <p><span lang="tr">Truss sistemleri, spot ve LED aydınlatmayla ürünleriniz en iyi ışıkta.</span><span lang="en">Truss rigging, spots and LED lighting put your products in their best light.</span><span lang="de">Traversen, Spots und LED-Licht setzen Ihre Produkte perfekt in Szene.</span></p></li>
+            </ul>
+            <div class="service__cta" data-reveal>
+              <a class="btn btn--accent" href="#iletisim"><span lang="tr">Fuar teklifi alın</span><span lang="en">Get an exhibition quote</span><span lang="de">Messeangebot anfordern</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              <a class="btn btn--ghost" href="galeri.html#fuar"><span lang="tr">Fuar projelerini görün</span><span lang="en">See exhibition projects</span><span lang="de">Messeprojekte ansehen</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3b) Mobilya montajı -->
+        <div class="service service--reverse">
+          <div class="service__media">
+            <div class="media-frame" data-reveal="clip">
+              <img src="assets/images/site/hizmet-mobilya.jpg" alt="" loading="lazy" data-parallax="0.08">
+              <span class="media-tag"><i></i><span lang="tr">Mutfak &amp; giyinme odası</span><span lang="en">Kitchens &amp; closets</span><span lang="de">Küchen &amp; Ankleiden</span></span>
+            </div>
+          </div>
+          <div>
+            <span class="service__index" data-reveal="fade"><span lang="tr">02 — Mobilya montajı</span><span lang="en">02 — Furniture installation</span><span lang="de">02 — Möbelmontage</span></span>
+            <h3 class="h2 service__title" data-split><span lang="tr">Mobilya <em>Montajı</em></span><span lang="en">Furniture <em>Installation</em></span><span lang="de">Möbel<em>montage</em></span></h3>
+            <p class="service__intro" data-reveal><span lang="tr">Mutfak dolabından giyinme odasına, kapıdan ayakkabılığa; her parçayı terazisinde, temiz ve hasarsız monte ediyoruz. İşimiz bitince geriye sadece düzgün çalışan kapaklar kalıyor.</span><span lang="en">From kitchen units to walk-in closets, doors to shoe cabinets — every piece is installed level, clean and damage-free. When we leave, only perfectly aligned doors remain.</span><span lang="de">Von der Küche bis zum Ankleidezimmer, von Türen bis zum Schuhschrank – jedes Teil wird exakt, sauber und schadensfrei montiert. Zurück bleiben nur perfekt ausgerichtete Fronten.</span></p>
+            <ul class="svc-list">
+              <li class="svc" data-reveal><span class="svc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M3 11h18v9H3z"/><path d="M12 11v9M3 15h18"/><path d="M8 4h8l2 4H6z"/></svg></span>
+                <h3><span lang="tr">Mutfak montajı</span><span lang="en">Kitchen installation</span><span lang="de">Küchenmontage</span></h3>
+                <p><span lang="tr">Alt-üst dolaplar, ada, tezgâh ve ankastre cihaz yerleşimi; terazisinde ve milimetrik.</span><span lang="en">Base and wall units, islands, worktops and built-in appliances — level and precise.</span><span lang="de">Unter- und Oberschränke, Kochinseln, Arbeitsplatten und Einbaugeräte – exakt im Lot.</span></p></li>
+              <li class="svc" data-reveal><span class="svc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M12 3v18M10 11v2M14 11v2"/></svg></span>
+                <h3><span lang="tr">Giyinme odası &amp; gardırop</span><span lang="en">Walk-in closets &amp; wardrobes</span><span lang="de">Ankleidezimmer &amp; Schränke</span></h3>
+                <p><span lang="tr">Giyinme odası sistemleri, sürgülü ve menteşeli gardıroplar, iç düzen aksesuarları.</span><span lang="en">Walk-in closet systems, sliding and hinged wardrobes, interior fittings.</span><span lang="de">Ankleidesysteme, Schiebe- und Drehtürenschränke, Innenausstattung.</span></p></li>
+              <li class="svc" data-reveal><span class="svc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v17"/><path d="M3 21h18"/><circle cx="15.5" cy="12" r=".9" fill="currentColor"/></svg></span>
+                <h3><span lang="tr">Kapı montajı</span><span lang="en">Door installation</span><span lang="de">Türmontage</span></h3>
+                <p><span lang="tr">İç kapı, sürgülü ve gömme kapı; kasa, pervaz ve kilit ayarıyla birlikte.</span><span lang="en">Interior, sliding and pocket doors — with frames, architraves and locks adjusted.</span><span lang="de">Innen-, Schiebe- und Taschentüren – inklusive Zarge, Blende und Schlossjustierung.</span></p></li>
+              <li class="svc" data-reveal><span class="svc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"/><path d="M7 5v3a1.5 1.5 0 0 0 3 0M14 5v3a1.5 1.5 0 0 0 3 0"/><path d="M4 15h16v3H4zM6 18v3M18 18v3"/></svg></span>
+                <h3><span lang="tr">Vestiyer</span><span lang="en">Hall units</span><span lang="de">Garderoben</span></h3>
+                <p><span lang="tr">Antre için askılıklı, oturma banklı ve dolaplı vestiyer çözümleri.</span><span lang="en">Entryway units with coat hooks, benches and storage.</span><span lang="de">Garderoben mit Haken, Sitzbank und Stauraum für den Eingangsbereich.</span></p></li>
+              <li class="svc" data-reveal><span class="svc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="1.5"/><path d="M3 12h18M7 18v2M17 18v2M10 9h4M10 15h4"/></svg></span>
+                <h3><span lang="tr">Ayakkabılık</span><span lang="en">Shoe cabinets</span><span lang="de">Schuhschränke</span></h3>
+                <p><span lang="tr">Duvara asma veya ayaklı, klapalı ve raflı ayakkabılık montajı.</span><span lang="en">Wall-hung or freestanding shoe cabinets with tilt-out doors or shelves.</span><span lang="de">Hängende oder stehende Schuhschränke mit Klappen oder Böden.</span></p></li>
+            </ul>
+            <div class="service__cta" data-reveal>
+              <a class="btn btn--accent" href="#iletisim"><span lang="tr">Montaj teklifi alın</span><span lang="en">Request installation</span><span lang="de">Montage anfragen</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              <a class="btn btn--ghost" href="galeri.html"><span lang="tr">Galeriyi inceleyin</span><span lang="en">Browse the gallery</span><span lang="de">Galerie ansehen</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ 4) RAKAMLAR
+         [DÜZENLE] data-count="..." içindeki sayıları kendi rakamlarınızla değiştirin. -->
+    <section class="section" style="padding-top:0" aria-label="SUSTEXPO">
+      <div class="container">
+        <div class="stats">
+          <div class="stat" data-reveal><div class="stat__num"><span data-count="250">250</span><sup>+</sup></div>
+            <p class="stat__label"><span lang="tr">Kurulan fuar standı</span><span lang="en">Exhibition stands built</span><span lang="de">Aufgebaute Messestände</span></p></div>
+          <div class="stat" data-reveal style="--d:100"><div class="stat__num"><span data-count="1800">1800</span><sup>+</sup></div>
+            <p class="stat__label"><span lang="tr">Mobilya montajı</span><span lang="en">Furniture installations</span><span lang="de">Möbelmontagen</span></p></div>
+          <div class="stat" data-reveal style="--d:200"><div class="stat__num"><span data-count="12">12</span><sup>+</sup></div>
+            <p class="stat__label"><span lang="tr">Yıllık tecrübe</span><span lang="en">Years of experience</span><span lang="de">Jahre Erfahrung</span></p></div>
+          <div class="stat" data-reveal style="--d:300"><div class="stat__num"><span data-count="30">30</span><sup>+</sup></div>
+            <p class="stat__label"><span lang="tr">Fuar alanı ve şehir</span><span lang="en">Venues and cities</span><span lang="de">Messeorte und Städte</span></p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ 5) HAKKIMIZDA -->
+    <section class="section" id="hakkimizda" style="padding-top:clamp(40px,6vw,80px)">
+      <div class="container">
+        <div class="about">
+          <div>
+            <p class="eyebrow" data-reveal="fade" style="margin-bottom:30px"><span lang="tr">Hakkımızda</span><span lang="en">About us</span><span lang="de">Über uns</span></p>
+            <p class="statement" data-words>
+              <span lang="tr">SUSTEXPO; fuar alanlarında stand kuran, evlerde ve ofislerde mobilya montajı yapan bir ekip. İki işin ortak noktası aynı: doğru ölçü, temiz işçilik ve söz verilen günde teslim.</span>
+              <span lang="en">SUSTEXPO is a team that builds stands at exhibition venues and installs furniture in homes and offices. Both crafts share the same essentials: accurate measurements, clean work and delivery on the promised day.</span>
+              <span lang="de">SUSTEXPO ist ein Team, das Messestände baut und Möbel in Wohnungen und Büros montiert. Beides verbindet dasselbe: genaues Maß, saubere Arbeit und Übergabe am versprochenen Tag.</span>
+            </p>
+            <p class="about__text" data-reveal>
+              <span lang="tr">Fuar organizatörleri, ajanslar ve markalarla çalışıyor; standı teknik çizimden alıp sahada hayata geçiriyoruz. Mobilya tarafında ise mutfaktan giyinme odasına kadar her parçayı, kendi evimize kurar gibi özenle monte ediyoruz.</span>
+              <span lang="en">We work with fair organisers, agencies and brands, taking a stand from technical drawing to reality on the show floor. On the furniture side, we install everything from kitchens to walk-in closets with the same care we would give our own home.</span>
+              <span lang="de">Wir arbeiten mit Messeveranstaltern, Agenturen und Marken und setzen Stände von der technischen Zeichnung bis zur fertigen Fläche um. Bei Möbeln montieren wir alles – von der Küche bis zum Ankleidezimmer – so sorgfältig, als wäre es unser eigenes Zuhause.</span>
+            </p>
+            <p style="margin-top:34px" data-reveal><a class="link-arrow" href="#iletisim"><span lang="tr">Bizimle tanışın</span><span lang="en">Get to know us</span><span lang="de">Lernen Sie uns kennen</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a></p>
+          </div>
+          <div class="collage">
+            <div class="collage__a" data-reveal="clip"><img src="assets/images/site/hakkimizda-1.jpg" alt="" loading="lazy" data-parallax="0.06"></div>
+            <div class="collage__b" data-reveal="clip" style="--d:200"><img src="assets/images/site/hakkimizda-2.jpg" alt="" loading="lazy" data-parallax="0.1"></div>
+            <div class="collage__badge" aria-hidden="true">
+              <svg viewBox="0 0 120 120"><defs><path id="circ" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0"/></defs><text font-size="10.5" font-weight="800" letter-spacing="3.6" fill="currentColor"><textPath href="#circ">SUSTEXPO ✦ SUSTEXPO ✦ SUSTEXPO ✦</textPath></text></svg>
+              <svg viewBox="0 0 40 40" style="position:static;width:42px;height:42px;animation:none"><rect x="10" y="9" width="20" height="4.6" fill="currentColor"/><rect x="10" y="9" width="4.6" height="7.5" fill="currentColor"/><rect x="10" y="17.7" width="20" height="4.6" fill="currentColor" opacity=".55"/><rect x="25.4" y="23.5" width="4.6" height="7.5" fill="currentColor"/><rect x="10" y="26.4" width="20" height="4.6" fill="currentColor"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="values">
+          <div class="value" data-reveal><b>01</b>
+            <h3><span lang="tr">Milimetrik ölçü</span><span lang="en">Precise measurements</span><span lang="de">Millimetergenau</span></h3>
+            <p><span lang="tr">Her işe yerinde keşif ve ölçüyle başlarız; sürprizlere yer bırakmayız.</span><span lang="en">Every job starts with an on-site survey — no surprises later.</span><span lang="de">Jeder Auftrag beginnt mit Aufmaß vor Ort – ohne spätere Überraschungen.</span></p></div>
+          <div class="value" data-reveal style="--d:100"><b>02</b>
+            <h3><span lang="tr">Zamanında teslim</span><span lang="en">On-time delivery</span><span lang="de">Pünktliche Übergabe</span></h3>
+            <p><span lang="tr">Fuar açılışı ertelenmez, biz de ertelemeyiz. Takvime sadık kalırız.</span><span lang="en">Opening day doesn't move, and neither do we. We stick to the schedule.</span><span lang="de">Die Messe wartet nicht – wir auch nicht. Wir halten jeden Termin.</span></p></div>
+          <div class="value" data-reveal style="--d:200"><b>03</b>
+            <h3><span lang="tr">Temiz işçilik</span><span lang="en">Clean craftsmanship</span><span lang="de">Saubere Arbeit</span></h3>
+            <p><span lang="tr">Koruyucu örtü, sessiz alet, toplanmış alan. Geldiğimiz gibi bırakırız.</span><span lang="en">Protective covers, quiet tools, a tidy site. We leave it as we found it.</span><span lang="de">Schutzabdeckungen, leise Werkzeuge, aufgeräumte Fläche – wie vorgefunden.</span></p></div>
+          <div class="value" data-reveal style="--d:300"><b>04</b>
+            <h3><span lang="tr">Tek muhatap</span><span lang="en">One point of contact</span><span lang="de">Ein Ansprechpartner</span></h3>
+            <p><span lang="tr">Keşiften söküme kadar tek bir proje sorumlusuyla çalışırsınız.</span><span lang="en">From survey to dismantling, you work with a single project lead.</span><span lang="de">Vom Aufmaß bis zum Abbau: ein fester Projektleiter für Sie.</span></p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ 6) ÇALIŞMA SÜRECİ (yatay kayan) -->
+    <section class="process" id="surec" data-process>
+      <div class="process__sticky">
+        <div class="container process__head">
+          <div>
+            <p class="eyebrow" data-reveal="fade" style="margin-bottom:20px"><span lang="tr">Süreç</span><span lang="en">Process</span><span lang="de">Ablauf</span></p>
+            <h2 class="h2" data-split><span lang="tr">Nasıl <em>çalışıyoruz?</em></span><span lang="en">How we <em>work</em></span><span lang="de">So <em>arbeiten</em> wir</span></h2>
+          </div>
+          <p class="muted" data-reveal="fade"><span lang="tr">Kaydırmaya devam edin →</span><span lang="en">Keep scrolling →</span><span lang="de">Weiter scrollen →</span></p>
+        </div>
+        <div class="process__track">
+          <article class="pcard"><span class="pcard__num">01</span>
+            <svg class="pcard__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"><path d="M3 17 17 3l4 4L7 21z"/><path d="M7 13l2 2M10 10l2 2M13 7l2 2"/></svg>
+            <h3><span lang="tr">Keşif &amp; ölçü</span><span lang="en">Survey &amp; measure</span><span lang="de">Aufmaß &amp; Beratung</span></h3>
+            <p><span lang="tr">Fuar alanını ya da mekânı yerinde inceler, ölçüleri alır, ihtiyaçlarınızı dinleriz.</span><span lang="en">We inspect the venue or room on site, take measurements and listen to your needs.</span><span lang="de">Wir besichtigen Messefläche oder Raum, nehmen Maß und hören Ihnen zu.</span></p></article>
+          <article class="pcard"><span class="pcard__num">02</span>
+            <svg class="pcard__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"><path d="M4 4h12l4 4v12H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>
+            <h3><span lang="tr">Planlama</span><span lang="en">Planning</span><span lang="de">Planung</span></h3>
+            <p><span lang="tr">Teknik çizim, malzeme listesi ve net bir iş takvimi hazırlarız.</span><span lang="en">We prepare technical drawings, a materials list and a clear schedule.</span><span lang="de">Wir erstellen technische Zeichnungen, Materialliste und einen klaren Zeitplan.</span></p></article>
+          <article class="pcard"><span class="pcard__num">03</span>
+            <svg class="pcard__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg>
+            <h3><span lang="tr">Kurulum &amp; montaj</span><span lang="en">Build &amp; install</span><span lang="de">Aufbau &amp; Montage</span></h3>
+            <p><span lang="tr">Ekibimiz sahada; hızlı, sessiz ve temiz çalışır.</span><span lang="en">Our crew works on site — fast, quiet and clean.</span><span lang="de">Unser Team arbeitet vor Ort – schnell, leise und sauber.</span></p></article>
+          <article class="pcard"><span class="pcard__num">04</span>
+            <svg class="pcard__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>
+            <h3><span lang="tr">Kontrol &amp; teslim</span><span lang="en">Check &amp; handover</span><span lang="de">Prüfung &amp; Übergabe</span></h3>
+            <p><span lang="tr">Her kapak, her bağlantı, her ışık kontrol edilir; sonra anahtar teslim ederiz.</span><span lang="en">Every door, joint and light is checked before we hand over the keys.</span><span lang="de">Jede Front, jede Verbindung, jedes Licht wird geprüft – dann übergeben wir.</span></p></article>
+          <article class="pcard"><span class="pcard__num">05</span>
+            <svg class="pcard__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"><path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5z"/><path d="M3 7.5 12 12l9-4.5M12 12v9"/></svg>
+            <h3><span lang="tr">Söküm &amp; destek</span><span lang="en">Dismantling &amp; support</span><span lang="de">Abbau &amp; Service</span></h3>
+            <p><span lang="tr">Fuar bitince standı sökeriz; montaj sonrası ayar ve destek için bir telefon uzağınızdayız.</span><span lang="en">After the show we dismantle the stand; for after-care adjustments we're one call away.</span><span lang="de">Nach der Messe bauen wir ab; für Nachjustierungen sind wir nur einen Anruf entfernt.</span></p></article>
+        </div>
+        <div class="container"><div class="process__progress" aria-hidden="true"><span></span></div></div>
+      </div>
+    </section>
+
+    <!-- ================================================================ 7) SEÇİLİ İŞLER
+         Buradaki 6 görsel galeriden seçkidir. Tüm görseller galeri.html'de. -->
+    <section class="section" id="isler">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow" data-reveal="fade"><span lang="tr">Seçili işler</span><span lang="en">Selected work</span><span lang="de">Ausgewählte Projekte</span></p>
+            <h2 class="h2" data-split><span lang="tr">Kurduğumuz <em>sahneler.</em></span><span lang="en">Spaces we've <em>built.</em></span><span lang="de">Räume, die wir <em>gebaut</em> haben.</span></h2>
+          </div>
+          <p class="lead" data-reveal style="--d:150"><span lang="tr">Fuar standlarından mutfaklara, giyinme odalarından kapılara; işlerimizden bir seçki.</span><span lang="en">From exhibition stands to kitchens, walk-in closets to doors — a selection of our work.</span><span lang="de">Von Messeständen bis Küchen, von Ankleiden bis Türen – eine Auswahl unserer Arbeiten.</span></p>
+        </div>
+        <div class="works" data-gallery>
+          <figure class="g-item" data-category="fuar" data-reveal="clip">
+            <img src="assets/images/gallery/fuar-01.jpg" alt="" loading="lazy">
+            <figcaption><span lang="tr">Köşe stand — LED ekran, lounge ve info desk</span><span lang="en">Corner stand — LED wall, lounge and info desk</span><span lang="de">Eckstand — LED-Wand, Lounge und Infotheke</span></figcaption>
+          </figure>
+          <figure class="g-item" data-category="fuar" data-reveal="clip" style="--d:120">
+            <img src="assets/images/gallery/fuar-03.jpg" alt="" loading="lazy">
+            <figcaption><span lang="tr">Ada stand — asma halka banner</span><span lang="en">Island stand — suspended ring banner</span><span lang="de">Inselstand — abgehängtes Ringbanner</span></figcaption>
+          </figure>
+          <figure class="g-item" data-category="mutfak" data-reveal="clip" style="--d:220">
+            <img src="assets/images/gallery/mutfak-01.jpg" alt="" loading="lazy">
+            <figcaption><span lang="tr">Yeşil lake ve meşe mutfak, mermer ada</span><span lang="en">Green lacquer and oak kitchen with marble island</span><span lang="de">Küche in Grünlack und Eiche mit Marmorinsel</span></figcaption>
+          </figure>
+          <figure class="g-item" data-category="fuar" data-reveal="clip">
+            <img src="assets/images/gallery/fuar-05.jpg" alt="" loading="lazy">
+            <figcaption><span lang="tr">Ahşap pavyon stand — çıtalı tavan</span><span lang="en">Timber pavilion stand — slatted roof</span><span lang="de">Holzpavillon-Stand — Lamellendach</span></figcaption>
+          </figure>
+          <figure class="g-item" data-category="giyinme" data-reveal="clip" style="--d:120">
+            <img src="assets/images/gallery/giyinme-01.jpg" alt="" loading="lazy">
+            <figcaption><span lang="tr">Ceviz giyinme odası, LED raflı</span><span lang="en">Walnut walk-in closet with LED shelves</span><span lang="de">Ankleidezimmer in Nussbaum mit LED-Böden</span></figcaption>
+          </figure>
+          <figure class="g-item" data-category="ayakkabilik" data-reveal="clip" style="--d:220">
+            <img src="assets/images/gallery/ayakkabilik-01.jpg" alt="" loading="lazy">
+            <figcaption><span lang="tr">Çıtalı kapaklı ayakkabılık ve ayna</span><span lang="en">Fluted shoe cabinet with round mirror</span><span lang="de">Schuhschrank mit Rillenfront und Spiegel</span></figcaption>
+          </figure>
+        </div>
+        <div class="works-foot" data-reveal>
+          <p class="muted"><span lang="tr">Tüm projeler galeride, kategoriye göre.</span><span lang="en">All projects in the gallery, sorted by category.</span><span lang="de">Alle Projekte in der Galerie, nach Kategorie.</span></p>
+          <a class="btn" href="galeri.html"><span lang="tr">Tüm galeriyi görün</span><span lang="en">View full gallery</span><span lang="de">Zur Galerie</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ 8) İŞ ORTAKLARI
+         [DÜZENLE] Logo eklemek için bir <div class="logo-tile"> satırını kopyalayın,
+         logonuzu assets/images/partners/ klasörüne koyup src'yi değiştirin.
+         İkinci (ters yönde akan) sıra otomatik oluşturulur. -->
+    <section class="section" id="is-ortaklari" style="padding-top:clamp(40px,6vw,90px)">
+      <div class="container partners-head">
+        <div>
+          <p class="eyebrow" data-reveal="fade" style="margin-bottom:22px"><span lang="tr">İş ortaklarımız</span><span lang="en">Partners</span><span lang="de">Partner</span></p>
+          <h2 class="h2" data-split><span lang="tr">Birlikte <em>büyüdüğümüz</em> markalar.</span><span lang="en">Brands we <em>grow</em> with.</span><span lang="de">Marken, mit denen wir <em>wachsen.</em></span></h2>
+        </div>
+        <p class="lead" data-reveal style="--d:150"><span lang="tr">Fuar organizatörleri, tasarım ofisleri, ajanslar ve mobilya üreticileriyle uzun soluklu iş birlikleri yürütüyoruz. Siz de bu listede yer almak ister misiniz?</span><span lang="en">We run long-term collaborations with fair organisers, design studios, agencies and furniture makers. Would you like to join this list?</span><span lang="de">Wir pflegen langjährige Partnerschaften mit Messeveranstaltern, Designbüros, Agenturen und Möbelherstellern. Möchten Sie dazugehören?</span></p>
+      </div>
+      <div class="logo-rows" data-partners data-reveal="fade">
+        <div class="logo-row">
+          <div class="logo-set">
+            <div class="logo-tile"><img src="assets/images/partners/partner-01.svg" alt="Partner 01" loading="lazy"></div>
+            <div class="logo-tile"><img src="assets/images/partners/partner-02.svg" alt="Partner 02" loading="lazy"></div>
+            <div class="logo-tile"><img src="assets/images/partners/partner-03.svg" alt="Partner 03" loading="lazy"></div>
+            <div class="logo-tile"><img src="assets/images/partners/partner-04.svg" alt="Partner 04" loading="lazy"></div>
+            <div class="logo-tile"><img src="assets/images/partners/partner-05.svg" alt="Partner 05" loading="lazy"></div>
+            <div class="logo-tile"><img src="assets/images/partners/partner-06.svg" alt="Partner 06" loading="lazy"></div>
+            <div class="logo-tile"><img src="assets/images/partners/partner-07.svg" alt="Partner 07" loading="lazy"></div>
+            <div class="logo-tile"><img src="assets/images/partners/partner-08.svg" alt="Partner 08" loading="lazy"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================ 9) İLETİŞİM -->
+    <section class="section" id="iletisim" style="padding-top:clamp(40px,6vw,90px)">
+      <div class="container">
+        <div class="cta-band" data-reveal="zoom">
+          <div class="cta-band__bg"><img src="assets/images/site/cta.jpg" alt="" loading="lazy" data-parallax="0.1"></div>
+          <p class="eyebrow"><span lang="tr">Yeni proje</span><span lang="en">New project</span><span lang="de">Neues Projekt</span></p>
+          <h2 class="h2"><span lang="tr">Bir sonraki fuarınızı <em>birlikte kuralım.</em></span><span lang="en">Let's build your next <em>show together.</em></span><span lang="de">Bauen wir Ihre nächste <em>Messe gemeinsam.</em></span></h2>
+          <div class="cta-band__actions">
+            <a class="btn btn--accent" href="#teklif-formu"><span lang="tr">Teklif formu</span><span lang="en">Quote form</span><span lang="de">Anfrageformular</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn--ghost" href="#" data-wa-copy target="_blank" rel="noopener"><span lang="tr">WhatsApp'tan yazın</span><span lang="en">Message on WhatsApp</span><span lang="de">Per WhatsApp schreiben</span></a>
+          </div>
+        </div>
+
+        <div class="contact" style="margin-top:clamp(70px,9vw,130px)">
+          <div>
+            <p class="eyebrow" data-reveal="fade" style="margin-bottom:22px"><span lang="tr">İletişim</span><span lang="en">Contact</span><span lang="de">Kontakt</span></p>
+            <h2 class="h2" data-split><span lang="tr">Projenizi <em>konuşalım.</em></span><span lang="en">Let's talk about <em>your project.</em></span><span lang="de">Sprechen wir über <em>Ihr Projekt.</em></span></h2>
+            <p class="lead" style="margin-top:22px" data-reveal><span lang="tr">Fuar tarihi, stand ölçüsü ya da montaj yapılacak mobilyalar… Ne kadar detay verirseniz o kadar hızlı teklif hazırlarız.</span><span lang="en">Fair dates, stand size or the furniture to be installed — the more detail you share, the faster we can quote.</span><span lang="de">Messetermin, Standgröße oder die zu montierenden Möbel – je mehr Details, desto schneller unser Angebot.</span></p>
+
+            <div class="contact__cards">
+              <!-- [DÜZENLE] TELEFON: hem href="tel:..." (boşluksuz) hem görünen numarayı değiştirin -->
+              <a class="ccard" href="tel:+905550000000" data-reveal>
+                <span class="ccard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h3.5l1.8 4.6-2.3 1.4a11 11 0 0 0 6 6l1.4-2.3L20 14.5V18a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg></span>
+                <span><small><span lang="tr">Telefon</span><span lang="en">Phone</span><span lang="de">Telefon</span></small><strong>+90 555 000 00 00</strong></span>
+                <svg class="ccard__go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
+              <!-- [DÜZENLE] E-POSTA: hem href="mailto:..." hem görünen adresi değiştirin (form da bu adrese yazar) -->
+              <a class="ccard" href="mailto:info@sustexpo.com" data-email-link data-reveal style="--d:80">
+                <span class="ccard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></span>
+                <span><small><span lang="tr">E-posta</span><span lang="en">Email</span><span lang="de">E-Mail</span></small><strong>info@sustexpo.com</strong></span>
+                <svg class="ccard__go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
+              <!-- [DÜZENLE] ADRES (harita için aşağıdaki data-map değerini de değiştirin) -->
+              <a class="ccard" href="#" data-map-directions target="_blank" rel="noopener" data-reveal style="--d:160">
+                <span class="ccard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+                <span><small><span lang="tr">Adres · Yol tarifi</span><span lang="en">Address · Directions</span><span lang="de">Adresse · Route</span></small><strong>Örnek Mah. Fuar Cad. No: 1, İstanbul</strong></span>
+                <svg class="ccard__go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
+              <!-- [DÜZENLE] ÇALIŞMA SAATLERİ -->
+              <div class="ccard" data-reveal style="--d:240">
+                <span class="ccard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+                <span><small><span lang="tr">Çalışma saatleri</span><span lang="en">Opening hours</span><span lang="de">Öffnungszeiten</span></small><strong><span lang="tr">Pzt – Cmt · 09:00 – 19:00</span><span lang="en">Mon – Sat · 09:00 – 19:00</span><span lang="de">Mo – Sa · 09:00 – 19:00</span></strong></span>
+              </div>
+            </div>
+            <!-- [DÜZENLE] SOSYAL MEDYA bağlantıları -->
+            <div class="socials" data-reveal>
+              <a class="icon-btn" href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+              <a class="icon-btn" href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V17M8 7.2v.01M12 17v-3.5a2.2 2.2 0 0 1 4.4 0V17M12 10.5V17"/></svg></a>
+              <a class="icon-btn" href="https://youtube.com/" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"/></svg></a>
+            </div>
+          </div>
+
+          <form class="form" id="teklif-formu" data-contact-form novalidate data-reveal>
+            <h3 class="h3" style="margin-bottom:26px"><span lang="tr">Teklif formu</span><span lang="en">Quote request</span><span lang="de">Angebotsanfrage</span></h3>
+            <div class="form__grid">
+              <div class="field">
+                <label for="f-name"><span lang="tr">Ad Soyad *</span><span lang="en">Full name *</span><span lang="de">Name *</span></label>
+                <input id="f-name" name="name" type="text" autocomplete="name" required data-tr="Adınız ve soyadınız" data-en="Your full name" data-de="Ihr vollständiger Name">
+              </div>
+              <div class="field">
+                <label for="f-phone"><span lang="tr">Telefon</span><span lang="en">Phone</span><span lang="de">Telefon</span></label>
+                <input id="f-phone" name="phone" type="tel" autocomplete="tel" data-tr="+90 5__ ___ __ __" data-en="+90 5__ ___ __ __" data-de="+49 1__ _______">
+              </div>
+              <div class="field">
+                <label for="f-email"><span lang="tr">E-posta</span><span lang="en">Email</span><span lang="de">E-Mail</span></label>
+                <input id="f-email" name="email" type="email" autocomplete="email" data-tr="ornek@firma.com" data-en="name@company.com" data-de="name@firma.de">
+              </div>
+              <div class="field">
+                <label for="f-service"><span lang="tr">Hizmet</span><span lang="en">Service</span><span lang="de">Leistung</span></label>
+                <select id="f-service" name="service">
+                  <option value="" data-tr="Seçiniz" data-en="Please choose" data-de="Bitte wählen">Seçiniz</option>
+                  <option value="fuar" data-tr="Fuar standı kurulumu" data-en="Exhibition stand" data-de="Messestand">Fuar standı kurulumu</option>
+                  <option value="mobilya" data-tr="Mobilya montajı" data-en="Furniture installation" data-de="Möbelmontage">Mobilya montajı</option>
+                  <option value="diger" data-tr="Diğer" data-en="Other" data-de="Sonstiges">Diğer</option>
+                </select>
+              </div>
+              <div class="field field--full">
+                <label for="f-date"><span lang="tr">Fuar / proje tarihi</span><span lang="en">Fair / project date</span><span lang="de">Messe- / Projekttermin</span></label>
+                <input id="f-date" name="date" type="text" data-tr="Örn. Mart 2027" data-en="e.g. March 2027" data-de="z. B. März 2027">
+              </div>
+              <div class="field field--full">
+                <label for="f-msg"><span lang="tr">Mesajınız *</span><span lang="en">Your message *</span><span lang="de">Ihre Nachricht *</span></label>
+                <textarea id="f-msg" name="message" required data-tr="Fuar adı, stand ölçüsü, montaj yapılacak ürünler…" data-en="Fair name, stand size, items to install…" data-de="Messename, Standgröße, zu montierende Möbel…"></textarea>
+              </div>
+            </div>
+            <div class="form__actions">
+              <button class="btn btn--accent" type="submit" data-send="mail"><span lang="tr">E-posta ile gönder</span><span lang="en">Send via email</span><span lang="de">Per E-Mail senden</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+              <button class="btn btn--ghost" type="button" data-send="wa"><span lang="tr">WhatsApp ile gönder</span><span lang="en">Send via WhatsApp</span><span lang="de">Per WhatsApp senden</span></button>
+            </div>
+            <p class="form__note"><span lang="tr">Gönder'e bastığınızda e-posta uygulamanız ya da WhatsApp açılır; mesajınız hazır yazılmış olur.</span><span lang="en">When you press send, your email app or WhatsApp opens with the message ready to go.</span><span lang="de">Beim Senden öffnet sich Ihr E-Mail-Programm oder WhatsApp – Ihre Nachricht ist bereits ausgefüllt.</span></p>
+            <p class="form__status" aria-live="polite"></p>
+            <div hidden data-messages>
+              <span data-msg="invalid"><span lang="tr">Lütfen adınızı ve mesajınızı yazın.</span><span lang="en">Please enter your name and message.</span><span lang="de">Bitte geben Sie Ihren Namen und Ihre Nachricht ein.</span></span>
+              <span data-msg="mail"><span lang="tr">E-posta uygulamanız açılıyor…</span><span lang="en">Opening your email app…</span><span lang="de">Ihr E-Mail-Programm wird geöffnet…</span></span>
+              <span data-msg="wa"><span lang="tr">WhatsApp açılıyor…</span><span lang="en">Opening WhatsApp…</span><span lang="de">WhatsApp wird geöffnet…</span></span>
+            </div>
+          </form>
+        </div>
+
+        <!-- [DÜZENLE] HARİTA: data-map içine adresinizi yazın (Google Maps'te aranacak metin) -->
+        <div class="map" data-map="İstanbul, Türkiye" data-reveal>
+          <div class="map__ph">
+            <div>
+              <div class="map__pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+              <strong class="h3"><span lang="tr">Bizi ziyaret edin</span><span lang="en">Visit us</span><span lang="de">Besuchen Sie uns</span></strong>
+              <p><span lang="tr">Konumumuzu görmek için haritayı yükleyin (Google Maps).</span><span lang="en">Load the map to see our location (Google Maps).</span><span lang="de">Laden Sie die Karte, um unseren Standort zu sehen (Google Maps).</span></p>
+              <button type="button" class="btn btn--ghost btn--sm" data-map-load><span lang="tr">Haritayı yükle</span><span lang="en">Load map</span><span lang="de">Karte laden</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================================================================ FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__about">
+          <a class="brand" href="#top" aria-label="SUSTEXPO">
+            <img class="logo-on-dark" src="assets/images/logo-light.svg" alt="SUSTEXPO" width="190" height="40">
+            <img class="logo-on-light" src="assets/images/logo-dark.svg" alt="SUSTEXPO" width="190" height="40">
+          </a>
+          <p><span lang="tr">Fuar stand kurulumu ve profesyonel mobilya montajı. Boş bir alandan anahtar teslim sonuca.</span><span lang="en">Exhibition stand building and professional furniture installation — from an empty plot to a turnkey result.</span><span lang="de">Messestandbau und professionelle Möbelmontage – von der leeren Fläche bis zur schlüsselfertigen Übergabe.</span></p>
+        </div>
+        <div>
+          <h4><span lang="tr">Sayfalar</span><span lang="en">Pages</span><span lang="de">Seiten</span></h4>
+          <ul>
+            <li><a href="#hizmetler"><span lang="tr">Hizmetler</span><span lang="en">Services</span><span lang="de">Leistungen</span></a></li>
+            <li><a href="#hakkimizda"><span lang="tr">Hakkımızda</span><span lang="en">About</span><span lang="de">Über uns</span></a></li>
+            <li><a href="galeri.html"><span lang="tr">Galeri</span><span lang="en">Gallery</span><span lang="de">Galerie</span></a></li>
+            <li><a href="#is-ortaklari"><span lang="tr">İş Ortakları</span><span lang="en">Partners</span><span lang="de">Partner</span></a></li>
+            <li><a href="#iletisim"><span lang="tr">İletişim</span><span lang="en">Contact</span><span lang="de">Kontakt</span></a></li>
+          </ul>
+        </div>
+        <div>
+          <h4><span lang="tr">Hizmetler</span><span lang="en">Services</span><span lang="de">Leistungen</span></h4>
+          <ul>
+            <li><a href="galeri.html#fuar"><span lang="tr">Fuar Standı</span><span lang="en">Exhibition Stands</span><span lang="de">Messestände</span></a></li>
+            <li><a href="galeri.html#mutfak"><span lang="tr">Mutfak</span><span lang="en">Kitchens</span><span lang="de">Küchen</span></a></li>
+            <li><a href="galeri.html#giyinme"><span lang="tr">Giyinme Odası</span><span lang="en">Walk-in Closets</span><span lang="de">Ankleidezimmer</span></a></li>
+            <li><a href="galeri.html#kapi"><span lang="tr">Kapı</span><span lang="en">Doors</span><span lang="de">Türen</span></a></li>
+            <li><a href="galeri.html#vestiyer"><span lang="tr">Vestiyer</span><span lang="en">Hall Units</span><span lang="de">Garderoben</span></a></li>
+            <li><a href="galeri.html#ayakkabilik"><span lang="tr">Ayakkabılık</span><span lang="en">Shoe Cabinets</span><span lang="de">Schuhschränke</span></a></li>
+          </ul>
+        </div>
+        <div>
+          <h4><span lang="tr">İletişim</span><span lang="en">Contact</span><span lang="de">Kontakt</span></h4>
+          <ul>
+            <!-- [DÜZENLE] Footer telefon ve e-posta -->
+            <li><a href="tel:+905550000000">+90 555 000 00 00</a></li>
+            <li><a href="mailto:info@sustexpo.com">info@sustexpo.com</a></li>
+            <li><span class="muted">İstanbul, Türkiye</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__word" aria-hidden="true">SUST<span>EXPO</span></div>
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> SUSTEXPO. <span lang="tr">Tüm hakları saklıdır.</span><span lang="en">All rights reserved.</span><span lang="de">Alle Rechte vorbehalten.</span></span>
+        <a class="to-top" href="#top" data-tr="Yukarı çık" data-en="Back to top" data-de="Nach oben" aria-label="Yukarı çık"><span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></span></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- [DÜZENLE] WHATSAPP: wa.me/ sonrasına numaranızı ülke koduyla, boşluksuz yazın (örn. 905551234567) -->
+  <a class="wa-float" href="https://wa.me/905550000000" data-wa-link target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35zM12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88zm8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.49-8.41z"/></svg>
+  </a>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/stand-builder.js"></script>
+  <script src="assets/js/gallery.js"></script>
+</body>
+</html>

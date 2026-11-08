@@ -1,0 +1,316 @@
+=====================================================================
+ SUSTEXPO WEB SİTESİ — DÜZENLEME REHBERİ
+=====================================================================
+
+Bu site sadece HTML, CSS ve JavaScript ile yapıldı. Admin paneli,
+veritabanı veya kurulum gerekmez. Dosyaları bir metin editörüyle
+(VS Code, Notepad++ veya Not Defteri) açıp düzenlemeniz yeterli.
+
+İPUCU: Değiştirmeniz gereken her yer dosyalarda "[DÜZENLE]" notuyla
+işaretli. Editörde Ctrl+F ile "DÜZENLE" aratın.
+
+
+---------------------------------------------------------------------
+ 1) KLASÖR YAPISI
+---------------------------------------------------------------------
+
+ sustexpo-web/
+ ├─ index.html               Ana sayfa (tüm bölümler)
+ ├─ galeri.html              Galeri sayfası
+ ├─ NASIL-DUZENLENIR.txt     Bu rehber
+ └─ assets/
+    ├─ css/style.css         Tasarım ve renkler
+    ├─ js/head.js            Dili ve temayı sayfa açılmadan ayarlar
+    ├─ js/main.js            Dil, tema, menü, animasyonlar, form
+    ├─ js/stand-builder.js   Kaydırdıkça kurulan fuar standı animasyonu
+    ├─ js/gallery.js         Galeri filtresi ve tam ekran görüntüleyici
+    ├─ fonts/                Yazı tipleri (lisansları FONT-LICENSES.txt)
+    └─ images/
+       ├─ logo-light.svg     Koyu temada görünen logo (açık renkli)
+       ├─ logo-dark.svg      Aydınlık temada görünen logo (koyu renkli)
+       ├─ favicon.svg ...    Tarayıcı sekmesindeki ikonlar
+       ├─ gallery/           Galeri görselleri
+       ├─ site/              Ana sayfadaki büyük görseller
+       └─ partners/          İş ortağı logoları
+
+JS dosyalarını düzenlemeniz GEREKMEZ. Tüm metinler ve iletişim
+bilgileri HTML dosyalarındadır.
+
+
+---------------------------------------------------------------------
+ 2) SİTEYİ AÇMAK VE YAYINLAMAK
+---------------------------------------------------------------------
+
+• Bilgisayarda görmek için index.html dosyasına çift tıklayın.
+  (Harita hariç her şey internetsiz de çalışır.)
+• Yayına almak için sustexpo-web klasörünün İÇİNDEKİ her şeyi
+  hostinginizin ana klasörüne (genelde public_html) yükleyin.
+  Netlify, Vercel, GitHub Pages gibi ücretsiz servislere klasörü
+  sürükleyip bırakarak da yayınlayabilirsiniz.
+
+
+---------------------------------------------------------------------
+ 3) TELEFON, E-POSTA, WHATSAPP, ADRES, HARİTA, SOSYAL MEDYA
+---------------------------------------------------------------------
+
+Örnek değerler:  +90 555 000 00 00  /  info@sustexpo.com  /  905550000000
+
+EN KOLAY YOL: Editörde "Bul ve Değiştir" (Ctrl+H) ile iki dosyada da
+(index.html ve galeri.html) şunları değiştirin:
+
+  +90 555 000 00 00   →  görünen telefon numaranız
+  905550000000        →  aynı numaranın ülke koduyla, BOŞLUKSUZ hali
+                         (örn. 905321234567). Bu tek değişiklik hem
+                         "tel:" bağlantılarını hem de WhatsApp'ı günceller.
+                         WhatsApp numaranız farklıysa, WhatsApp butonundaki
+                         wa.me/... kısmını ayrıca düzeltin.
+  info@sustexpo.com   →  e-posta adresiniz
+
+Tek tek yapmak isterseniz bulunduğu yerler:
+
+ index.html
+   • İletişim kartları ("[DÜZENLE] TELEFON", "[DÜZENLE] E-POSTA")
+   • Footer ("[DÜZENLE] Footer telefon ve e-posta")
+   • Sağ alttaki WhatsApp butonu ("[DÜZENLE] WHATSAPP")
+ galeri.html
+   • Footer ve WhatsApp butonu
+
+Otomatik olanlar:
+   • İletişim formu, e-postayı iletişim kartındaki adresten
+     (data-email-link), WhatsApp numarasını da sağ alttaki WhatsApp
+     butonundan (data-wa-link) kendisi alır.
+   • "WhatsApp'tan yazın" butonları da numarayı aynı yerden alır.
+
+ADRES: index.html → "[DÜZENLE] ADRES" kartındaki yazıyı değiştirin.
+HARİTA: index.html → "[DÜZENLE] HARİTA" satırındaki
+        data-map="İstanbul, Türkiye" kısmına tam adresinizi yazın.
+        (Google Maps'te arattığınız metin neyse onu yazın.)
+        "Yol tarifi" bağlantısı da bu adresi kullanır.
+ÇALIŞMA SAATLERİ: "[DÜZENLE] ÇALIŞMA SAATLERİ" (üç dilde).
+SOSYAL MEDYA: "[DÜZENLE] SOSYAL MEDYA" altındaki href="..." adresleri.
+
+
+---------------------------------------------------------------------
+ 4) METİNLER VE DİL SİSTEMİ (TR / EN / DE)
+---------------------------------------------------------------------
+
+Her metin HTML içinde üç dilde YAN YANA yazılıdır. Sitede sadece
+seçili dildeki satır görünür, diğerleri gizlenir:
+
+   <h2>
+     <span lang="tr">Hakkımızda</span>
+     <span lang="en">About Us</span>
+     <span lang="de">Über uns</span>
+   </h2>
+
+Uzun paragraflarda da aynı mantık:
+
+   <p>
+     <span lang="tr">Türkçe paragraf…</span>
+     <span lang="en">English paragraph…</span>
+     <span lang="de">Deutscher Absatz…</span>
+   </p>
+
+KURALLAR
+ • Bir metni değiştirirken üç dilini de güncelleyin.
+   Bir dili silerseniz, o dilde o yazı boş görünür.
+ • <em>…</em> içindeki kelimeler başlıklarda italik ve renkli görünür.
+ • lang="…" etiketlerini silmeyin; dil sistemi bunlarla çalışır.
+
+ETİKET İÇİNE YAZILAMAYAN METİNLER
+Tarayıcı sekmesindeki başlık, açıklama ve form kutularının içindeki
+silik yazılar özniteliklerle yazılır:
+
+   <input ... data-tr="Adınız ve soyadınız"
+              data-en="Your full name"
+              data-de="Ihr vollständiger Name">
+
+DİL NASIL SEÇİLİR?
+ • Ziyaretçinin seçimi tarayıcıda hatırlanır.
+ • İlk ziyarette tarayıcı dili Türkçe ise TR, Almanca ise DE,
+   İngilizce ise EN açılır.
+ • Diğer dillerde açılacak dili <html> etiketindeki
+   data-default-lang="en" belirler. Türkçe olsun isterseniz "tr" yapın
+   (index.html ve galeri.html'in en üstünde).
+ • Bağlantıya ?lang=de ekleyerek belirli bir dille açabilirsiniz:
+   örn. www.siteniz.com/?lang=de
+
+
+---------------------------------------------------------------------
+ 5) GALERİYE GÖRSEL EKLEMEK
+---------------------------------------------------------------------
+
+1. Fotoğrafınızı assets/images/gallery/ klasörüne koyun.
+   Örn: fuar-09.jpg
+2. galeri.html'de "GALERİ ÖĞESİ" yazan bloğu kopyalayıp altına
+   yapıştırın:
+
+   <figure class="g-item" data-category="fuar">
+     <img src="assets/images/gallery/fuar-09.jpg" alt="" loading="lazy">
+     <figcaption>
+       <span lang="tr">Türkçe başlık</span>
+       <span lang="en">English title</span>
+       <span lang="de">Deutscher Titel</span>
+     </figcaption>
+   </figure>
+
+3. data-category değerini seçin:
+      fuar · mutfak · giyinme · kapi · vestiyer · ayakkabilik
+4. Kaydedin. Filtre sayıları, numaralar, mozaik düzen ve tam ekran
+   görüntüleyici kendiliğinden güncellenir.
+
+• Görsel silmek için ilgili <figure>…</figure> bloğunu silin.
+• Sıralama, HTML'deki sıradır. Üste aldığınız görsel önce görünür.
+• Kutu boyutları (büyük, geniş, uzun) otomatik ayarlanır;
+  fotoğraflarınız kutuya göre ortadan kırpılır, tam ekranda ise
+  kırpılmadan gösterilir.
+
+YENİ KATEGORİ EKLEMEK (örn. "banyo")
+ galeri.html'de filtre butonlarından birini kopyalayın:
+
+   <button type="button" data-filter="banyo" aria-pressed="false">
+     <span class="f-label"><span lang="tr">Banyo</span><span lang="en">Bathrooms</span><span lang="de">Bäder</span></span>
+   </button>
+
+ Sonra görsellerde data-category="banyo" kullanın.
+
+ANA SAYFADAKİ "SEÇİLİ İŞLER"
+ index.html'deki 6 görsel ayrı bir seçkidir (aynı yapıda <figure>
+ blokları). İstediğiniz 6 görseli buraya da yazabilirsiniz.
+
+FOTOĞRAF ÖNERİLERİ
+ • Yatay fotoğraf, en az 1600 piksel genişlik.
+ • Dosyayı küçültün (her biri 200–400 KB ideal). Ücretsiz:
+   https://squoosh.app  (JPG, kalite ~80)
+ • Dosya adında Türkçe karakter ve boşluk kullanmayın:
+   "fuar-standi-01.jpg" gibi.
+
+
+---------------------------------------------------------------------
+ 6) ÖRNEK GÖRSELLER HAKKINDA (ÖNEMLİ)
+---------------------------------------------------------------------
+
+Sitedeki görseller, sizin fotoğraflarınız gelene kadar siteyi boş
+göstermemek için hazırlanmış ÖRNEK 3D görsellerdir; gerçek bir
+projeyi göstermezler. Yayına almadan önce kendi iş fotoğraflarınızla
+değiştirin. En kolayı: aynı dosya adıyla üzerine kaydetmek.
+
+Ana sayfadaki büyük görseller (assets/images/site/):
+   hizmet-fuar.jpg      Hizmetler > Fuar Stand Kurulumu
+   hizmet-mobilya.jpg   Hizmetler > Mobilya Montajı
+   hakkimizda-1.jpg     Hakkımızda büyük görsel
+   hakkimizda-2.jpg     Hakkımızda küçük görsel
+   cta.jpg              "Bir sonraki fuarınızı birlikte kuralım" bandı
+   og-image.jpg         WhatsApp/sosyal medyada link paylaşınca çıkan
+                        görsel (1200×630)
+
+
+---------------------------------------------------------------------
+ 7) İŞ ORTAĞI LOGOSU EKLEMEK
+---------------------------------------------------------------------
+
+1. Logoyu assets/images/partners/ klasörüne koyun (PNG veya SVG,
+   şeffaf arka plan en iyisi).
+2. index.html'de "İŞ ORTAKLARI" bölümünde bir satırı kopyalayın:
+
+   <div class="logo-tile"><img src="assets/images/partners/firma.png" alt="Firma Adı" loading="lazy"></div>
+
+3. Örnek "partner-01 … partner-08" satırlarını silin.
+İkinci (ters yönde akan) sıra otomatik oluşturulur.
+
+
+---------------------------------------------------------------------
+ 8) RAKAMLAR (SAYAÇLAR)
+---------------------------------------------------------------------
+
+index.html → "4) RAKAMLAR" bölümü. Örnek:
+   <span data-count="250">250</span><sup>+</sup>
+İki yerdeki 250'yi de kendi rakamınızla değiştirin. Bu rakamlar
+örnektir; gerçek değerlerinizi yazın.
+
+
+---------------------------------------------------------------------
+ 9) RENKLER VE TEMA
+---------------------------------------------------------------------
+
+assets/css/style.css dosyasının başında:
+
+   --brand-on-light: #A8742F;   aydınlık temadaki vurgu rengi
+   --brand-on-dark:  #D4A866;   koyu temadaki vurgu rengi
+
+Bu iki rengi değiştirdiğinizde butonlar, başlıklardaki italik
+kelimeler ve fuar standı animasyonu dahil tüm vurgu rengi değişir.
+Diğer renkler hemen altında "Koyu tema" ve "Aydınlık tema"
+bloklarındadır.
+
+İlk ziyarette tema, ziyaretçinin cihaz ayarına göre açılır;
+sağ üstteki ay/güneş düğmesiyle değiştirilir ve hatırlanır.
+
+
+---------------------------------------------------------------------
+ 10) LOGO
+---------------------------------------------------------------------
+
+Kendi logonuzu kullanmak için assets/images/ içindeki iki dosyayı
+değiştirin:
+   logo-light.svg  → koyu zeminde görünen (açık renkli) logo
+   logo-dark.svg   → açık zeminde görünen (koyu renkli) logo
+PNG kullanacaksanız index.html ve galeri.html'deki src="..."
+kısımlarını yeni dosya adına göre güncelleyin (Ctrl+H ile
+"logo-light.svg" ve "logo-dark.svg" aratın).
+Favicon için favicon.svg, favicon-32.png ve apple-touch-icon.png
+dosyalarını değiştirin.
+
+
+---------------------------------------------------------------------
+ 11) FUAR STANDI ANİMASYONU
+---------------------------------------------------------------------
+
+Açılıştaki "kaydırdıkça kurulan stand" assets/js/stand-builder.js
+dosyasında çizilir (kütüphane yok, saf JavaScript + canvas).
+ • Başlık ve 8 adımın metinleri index.html'de, "1) KAYDIRDIKÇA
+   KURULAN FUAR STANDI" bölümündedir; oradan değiştirebilirsiniz.
+ • Renkleri tema ve vurgu rengine göre otomatik ayarlanır.
+ • "Hareketi azalt" ayarı açık cihazlarda yanıp sönme efektleri
+   kapanır.
+
+
+SÜZÜLEN KAYDIRMA
+ Fare tekerleğiyle kaydırınca sayfa yumuşakça süzülür; menü
+ bağlantıları ve yukarı çık butonu da süzülerek gider. Hızı
+ assets/js/main.js içinde "var GLIDE = 0.09;" satırından
+ ayarlayabilirsiniz (0.06 = daha yavaş ve uzun süzülme,
+ 0.15 = daha hızlı). Telefonlarda ekranın kendi doğal kaydırması
+ kullanılır; "hareketi azalt" ayarı açık cihazlarda kapalıdır.
+
+
+---------------------------------------------------------------------
+ 12) İLETİŞİM FORMU NASIL ÇALIŞIR?
+---------------------------------------------------------------------
+
+Sitenin bir sunucusu olmadığı için form mesajı kendisi göndermez.
+Ziyaretçi "E-posta ile gönder"e bastığında e-posta uygulaması,
+"WhatsApp ile gönder"e bastığında WhatsApp açılır; mesaj hazır
+yazılmış olur, ziyaretçi sadece gönder'e basar.
+
+İleride mesajların doğrudan size gelmesini isterseniz Formspree
+(formspree.io) gibi ücretsiz bir servis bağlanabilir.
+
+
+---------------------------------------------------------------------
+ 13) YAYINA ALIRKEN KONTROL LİSTESİ
+---------------------------------------------------------------------
+
+ [ ] Telefon, e-posta, WhatsApp, adres ve harita güncellendi
+ [ ] Örnek görseller kendi fotoğraflarınızla değiştirildi
+ [ ] Rakamlar (sayaçlar) gerçek değerlerle güncellendi
+ [ ] İş ortağı logoları eklendi (veya bölüm silindi)
+ [ ] Sosyal medya bağlantıları güncellendi
+ [ ] index.html'deki og:image satırına tam adres yazıldı:
+     https://www.siteniz.com/assets/images/site/og-image.jpg
+ [ ] Almanya'da faaliyet gösteriyorsanız Impressum ve gizlilik
+     sayfası eklendi (yasal zorunluluk; metni bir uzmana
+     kontrol ettirin)
+
+Tarayıcı desteği: Chrome, Edge, Safari, Firefox ve Samsung
+Internet'in güncel sürümleri; telefon, tablet ve bilgisayar.
